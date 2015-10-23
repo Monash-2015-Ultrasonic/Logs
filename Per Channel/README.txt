@@ -6,3 +6,7 @@ This is to evaluate the performance of each channel at detecting a calibrated di
 These are the times returned after quadratic interpolation per channel.
 
 The range is just (time * 49 / 78125) (which is time * 256/70000000 * 343 / 2)
+
+
+Logs are formatted as:
+CH1TIME<tab>CH2TIME<tab>CH3TIME<tab>CH4TIME<\n>
