@@ -1,0 +1,1 @@
+No detection beyond 15deg @ 100cm
