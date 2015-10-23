@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<instance entity-name="altera_fir_compiler_ii" version="13.0" >
+<generic name="deviceFamily" value="Cyclone II" />
+<generic name="filterType" value="Single Rate" />
+<generic name="interpFactor" value="1" />
+<generic name="decimFactor" value="1" />
+<generic name="L_bandsFilter" value="All taps" />
+<generic name="clockRate" value="70" />
+<generic name="clockSlack" value="0" />
+<generic name="speedGrade" value="Medium" />
+<generic name="coeffReload" value="false" />
+<generic name="baseAddress" value="0" />
+<generic name="readWriteMode" value="Read/Write" />
+<generic name="backPressure" value="false" />
+<generic name="symmetryMode" value="Non Symmetry" />
+<generic name="delayRAMBlockThreshold" value="20" />
+<generic name="dualMemDistRAMThreshold" value="1280" />
+<generic name="mRAMThreshold" value="1000000" />
+<generic name="hardMultiplierThreshold" value="-1" />
+<generic name="inputRate" value="0.273" />
+<generic name="inputChannelNum" value="1" />
+<generic name="inputType" value="Signed Binary" />
+<generic name="inputBitWidth" value="13" />
+<generic name="inputFracBitWidth" value="0" />
+<generic name="coeffSetRealValue" value="0.244071,0.141787,-0.113977,-0.232884,-0.204786,-0.0225185,0.192516,0.241645,0.125623,-0.13334,-0.229299,-0.193922,0.00304137,0.187374,0.221098,0.112259,-0.124533,-0.218408,-0.177944,0.011294,0.173282,0.202265,0.0980707,-0.118572,-0.193214,-0.154191,0.0148849,0.152119,0.174184,0.0767349,-0.114838,-0.158876,-0.12453,0.0118619,0.125849,0.14105,0.0557348,-0.101021,-0.124814,-0.0938667,0.0185207,0.0924022,0.1008,0.0413365,-0.0681749,-0.0861659,-0.0613104,0.0186249,0.0619798,0.0654723,0.023523,-0.0492182,-0.0557951,-0.0371067,0.016661,0.0399565,0.0382857,0.00752456,-0.0157408,-0.0235637,-0.015232,0.00532852,0.00466478,0.0044306,0.00158585" />
+<generic name="coeffType" value="Signed Binary" />
+<generic name="coeffScaling" value="Auto" />
+<generic name="coeffBitWidth" value="10" />
+<generic name="coeffFracBitWidth" value="0" />
+<generic name="outType" value="Signed Binary" />
+<generic name="outMSBRound" value="Truncation" />
+<generic name="outMsbBitRem" value="0" />
+<generic name="outLSBRound" value="Truncation" />
+<generic name="outLsbBitRem" value="0" />
+<generic name="resoureEstimation" value="1000,1200,10" />
+<generic name="bankCount" value="1" />
+<generic name="bankDisplay" value="0" />
+</instance>

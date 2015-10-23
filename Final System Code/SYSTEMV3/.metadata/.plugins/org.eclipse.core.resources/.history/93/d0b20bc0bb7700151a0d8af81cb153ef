@@ -1,0 +1,701 @@
+/*
+ * Precise answer: 58.1; NIOS Answer: +0.0021566% Error
+ * int n_test = qInterp(1000000, 57, 93, 100, 99, 100, 95, 100);
+ *
+ * Precise answer: 58.041958; NIOS Answer: +0.0222351% Error
+ * int n_test = qInterp(1000000, 57, 4415676025201, 13660598848400, 14488231808281, 14775262118400, 6581528571601, 15485119375600);
+ * printf("%d\n", n_test);
+ *
+ */
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <math.h>
+
+#include "config.h"
+#include "LCD.h"
+#include "RuntimeFunctions.h"
+
+
+
+/* Global variables */
+const int N_receivers=4; /* Number of receivers */
+int calc_mode; /* Calculation mode */
+float pi;
+float *y, *z; /* Receiver y- and z-coordinates (mm) */
+float *d_2; /* Distance from transmitter to receivers */
+float *counter; /* Path lengths (counts) */
+float detATA;
+float **A, **AT, **ATA;
+
+
+float realR=0, realphi=0, realtheta=0;
+float L, R, phi, theta;
+int max_error=0, error=0, k=0;
+
+
+
+int distance = 0;
+alt_u64 CH0_nOut, CH1_nOut, CH2_nOut, CH3_nOut;
+
+alt_u64 qInterp(int precision, int n1, alt_u64 Yn1num, alt_u64 Yn1den, alt_u64 Yn2num, alt_u64 Yn2den, alt_u64 Yn3num, alt_u64 Yn3den)
+{
+	float fYn1num = sqrt(Yn1num);
+	float fYn1den = sqrt(Yn1den);
+	float Yn1 = fYn1num / fYn1den;
+
+	float fYn2num = sqrt(Yn2num);
+	float fYn2den = sqrt(Yn2den);
+	float Yn2 = fYn2num / fYn2den;
+
+	float fYn3num = sqrt(Yn3num);
+	float fYn3den = sqrt(Yn3den);
+	float Yn3 = fYn3num / fYn3den;
+
+	alt_64 fraction = ( (3*Yn1) - (4*Yn2) + Yn3 ) * precision;
+	fraction /= ( 2*(Yn1 - (2*Yn2) + Yn3) );
+
+	alt_u64 nTPT = (n1* precision) + fraction;
+	return nTPT;
+}
+
+void sampleChannels(void)
+{
+	alt_u32 YnL;
+	alt_u64 YnML, YnMU, YnU;
+
+	if (*CH0_peakFound) {
+		*CH0_RD = 0x1;
+		*CH0_RD = 0x0;
+
+		YnL				= *CH0_Yn1L;
+		YnML 			= *CH0_Yn1ML;
+		YnMU			= *CH0_Yn1MU;
+		YnU 			= *CH0_Yn1U;
+		alt_u64 Yn1DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn1NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH0_Yn2L;
+		YnML 			= *CH0_Yn2ML;
+		YnMU			= *CH0_Yn2MU;
+		YnU 			= *CH0_Yn2U;
+		alt_u64 Yn2DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn2NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH0_Yn3L;
+		YnML 			= *CH0_Yn3ML;
+		YnMU			= *CH0_Yn3MU;
+		YnU 			= *CH0_Yn3U;
+		alt_u64 Yn3DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn3NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		//printf("%d\n", (Yn1DEN & 0xFFFFFFFF00000000) >> 32);		// top 32 bits;
+		//printf("%d\n", (Yn1DEN & 0x00000000FFFFFFFF));				// bottom 32 bits;
+
+		int n 			= *CH0_TIME;
+
+		CH0_nOut = qInterp(1000000, n-2, Yn1NUM, Yn1DEN, Yn2NUM, Yn2DEN, Yn3NUM, Yn3DEN);
+
+		// CH0_nOut * 343 * 256 / 70000000 / 2 = CH0_nOut * 98 / 78125 / 2 = CH0_nOut * 49 / 78125
+		distance = ((CH0_nOut * 49 / 78125) + distance) / 2;
+		LCD_update();
+	} else {
+		//CH0_nOut = 0;
+	}
+
+	usleep(0.001 seconds);
+
+	if (*CH1_peakFound) {
+		*CH1_RD = 0x1;
+		*CH1_RD = 0x0;
+
+		YnL				= *CH1_Yn1L;
+		YnML 			= *CH1_Yn1ML;
+		YnMU			= *CH1_Yn1MU;
+		YnU 			= *CH1_Yn1U;
+		alt_u64 Yn1DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn1NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH1_Yn2L;
+		YnML 			= *CH1_Yn2ML;
+		YnMU			= *CH1_Yn2MU;
+		YnU 			= *CH1_Yn2U;
+		alt_u64 Yn2DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn2NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH1_Yn3L;
+		YnML 			= *CH1_Yn3ML;
+		YnMU			= *CH1_Yn3MU;
+		YnU 			= *CH1_Yn3U;
+		alt_u64 Yn3DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn3NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		//printf("%d\n", (Yn1DEN & 0xFFFFFFFF00000000) >> 32);		// top 32 bits;
+		//printf("%d\n", (Yn1DEN & 0x00000000FFFFFFFF));				// bottom 32 bits;
+
+		int n 			= *CH0_TIME;
+
+		CH1_nOut = qInterp(1000000, n-2, Yn1NUM, Yn1DEN, Yn2NUM, Yn2DEN, Yn3NUM, Yn3DEN);
+
+		// n_out * 343 * 256 / 70000000 / 2 = n_out * 98 / 78125 / 2 = n_out * 49 / 78125
+		//distance = ((CH1_nOut * 49 / 78125) + distance) / 2;
+		//LCD_update();
+	} else {
+		CH1_nOut = 0;
+	}
+
+	usleep(0.001 seconds);
+
+	if (*CH2_peakFound) {
+		*CH2_RD = 0x1;
+		*CH2_RD = 0x0;
+
+		YnL				= *CH2_Yn1L;
+		YnML 			= *CH2_Yn1ML;
+		YnMU			= *CH2_Yn1MU;
+		YnU 			= *CH2_Yn1U;
+		alt_u64 Yn1DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn1NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH2_Yn2L;
+		YnML 			= *CH2_Yn2ML;
+		YnMU			= *CH2_Yn2MU;
+		YnU 			= *CH2_Yn2U;
+		alt_u64 Yn2DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn2NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH2_Yn3L;
+		YnML 			= *CH2_Yn3ML;
+		YnMU			= *CH2_Yn3MU;
+		YnU 			= *CH2_Yn3U;
+		alt_u64 Yn3DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn3NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		//printf("%d\n", (Yn1DEN & 0xFFFFFFFF00000000) >> 32);		// top 32 bits;
+		//printf("%d\n", (Yn1DEN & 0x00000000FFFFFFFF));				// bottom 32 bits;
+
+		int n 			= *CH2_TIME;
+
+		CH2_nOut = qInterp(1000000, n-2, Yn1NUM, Yn1DEN, Yn2NUM, Yn2DEN, Yn3NUM, Yn3DEN);
+
+		// n_out * 343 * 256 / 70000000 / 2 = n_out * 98 / 78125 / 2 = n_out * 49 / 78125
+		//distance = ((CH2_nOut * 49 / 78125) + distance) / 2;
+		//LCD_update();
+	} else {
+		CH2_nOut = 0;
+	}
+
+	usleep(0.001 seconds);
+
+	if (*CH3_peakFound) {
+		*CH3_RD = 0x1;
+		*CH3_RD = 0x0;
+
+		YnL				= *CH3_Yn1L;
+		YnML 			= *CH3_Yn1ML;
+		YnMU			= *CH3_Yn1MU;
+		YnU 			= *CH3_Yn1U;
+		alt_u64 Yn1DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn1NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH3_Yn2L;
+		YnML 			= *CH3_Yn2ML;
+		YnMU			= *CH3_Yn2MU;
+		YnU 			= *CH3_Yn2U;
+		alt_u64 Yn2DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn2NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		YnL				= *CH3_Yn3L;
+		YnML 			= *CH3_Yn3ML;
+		YnMU			= *CH3_Yn3MU;
+		YnU 			= *CH3_Yn3U;
+		alt_u64 Yn3DEN 	= ((YnML & 0x3FFFF) << 32) + YnL;
+		alt_u64 Yn3NUM 	= ((YnU & 0x3FFF) << 48) + (YnMU << 14) + ((YnML & 0xFFFC0000) >> 18);
+
+		//printf("%d\n", (Yn1DEN & 0xFFFFFFFF00000000) >> 32);		// top 32 bits;
+		//printf("%d\n", (Yn1DEN & 0x00000000FFFFFFFF));			// bottom 32 bits;
+
+		int n 			= *CH3_TIME;
+
+		CH3_nOut = qInterp(1000000, n-2, Yn1NUM, Yn1DEN, Yn2NUM, Yn2DEN, Yn3NUM, Yn3DEN);
+
+		// n_out * 343 * 256 / 70000000 / 2 = n_out * 98 / 78125 / 2 = n_out * 49 / 78125
+		//distance = ((CH3_nOut * 49 / 78125) + distance) / 2;
+		//LCD_update();
+	} else {
+		CH3_nOut = 0;
+	}
+
+	counter[0] = CH0_nOut / 1000000;
+	counter[1] = CH1_nOut / 1000000;
+	counter[2] = CH2_nOut / 1000000;
+	counter[3] = ((CH3_nOut*4/5) + (CH1_nOut/5)) / 1000000;
+
+	//printf("%d\n", CH0_nOut);
+	//printf("%d\n", CH1_nOut);
+	//printf("%d\n", CH2_nOut);
+	//printf("%d\n\n", CH3_nOut);
+}
+
+void arithmetics(void)
+{
+	find_coordinates(counter,N_receivers,calc_mode,&R,&phi,&theta);
+	display_results(calc_mode, R, phi, theta);
+}
+
+
+
+
+
+
+
+/* Runs once on startup */
+void find_constants()
+{
+	int k;
+
+	/* Calculate pi */
+	pi=(float)acos(-1.0);
+
+	/* Set initial mode */
+	calc_mode=3;
+
+	/* Initialise counters */
+	counter=(float*)calloc(N_receivers,sizeof(float));
+
+	for(k=0;k<N_receivers;k++)
+	{
+		counter[k]=0;
+	}
+
+	/* Set receiver coordinates (mm) */
+	y=(float*)calloc(N_receivers,sizeof(float));
+	z=(float*)calloc(N_receivers,sizeof(float));
+	d_2=(float*)calloc(N_receivers,sizeof(float));
+
+	y[0]=32;//25;
+	y[1]=40;//33;
+	y[2]=47;//40;
+	y[3]=32;//25;
+	/*y[4]=35;*/
+	z[0]=0;
+	z[1]=3;
+	z[2]=5;
+	z[3]=10;
+	/*z[4]=10;*/
+
+	for(k=0;k<N_receivers;k++)
+	{
+		/*y[k]=y[k]*count_rate/v/1000;
+		z[k]=z[k]*count_rate/v/1000;*/
+		y[k]=y[k]*625/784;
+		z[k]=z[k]*625/784;
+
+		d_2[k]=y[k]*y[k]+z[k]*z[k]; /* Square of distance from transmitter to receiver */
+	}
+}
+
+/* Runs once when mode is changed */
+void change_mode(int N, int mode)
+{
+	int *k_valid;
+	int k;
+
+	k_valid=(int*)calloc(N,sizeof(int));
+
+	for(k=0;k<N;k++)
+	{
+		k_valid[k]=k;
+	}
+
+	/* Set up linear system */
+	find_denominator(k_valid, N, mode, &AT, &ATA, &detATA);
+}
+
+/* Runs after each detection cycle */
+void find_coordinates(float *L, int N, int mode, float *R, float *phi, float *theta)
+{
+	float **BT, **BTB, **BTb, **b, **A1;
+	float *x;
+	float ave_pl, max_diff, detBTB, detA1;
+	int i,j,k,n;
+	int *k_valid;
+
+	/* Maximum difference between path lengths (mm to counts)*/
+	max_diff=1000;//24;
+
+	ave_pl=0;
+
+	for(k=0;k<N;k++)
+	{
+		ave_pl+=L[k];
+	}
+
+	ave_pl/=N;
+
+	/* Check for missed and false detections */
+	n=N;
+	k_valid=(int*)calloc(n,sizeof(int));
+	i=0;
+
+	for(k=0;k<N;k++)
+	{
+		if((L[k]-ave_pl)*(L[k]-ave_pl)>max_diff*max_diff) /* Check for false detections */
+		{
+			n-=1;
+			k_valid=(int*)realloc(k_valid,n*sizeof(int));
+		}
+		else
+		{
+			k_valid[i]=k;
+			i++;
+		}
+	}
+
+
+	if(n<mode)
+	{
+		/* Underdetermined system */
+		*R=-1;
+		*phi=0;
+		*theta=0;
+	}
+	else
+	{
+		b=(float**)calloc(n,sizeof(float*));
+
+		for(k=0;k<n;k++)
+		{
+			b[k]=(float*)calloc(1,sizeof(float));
+			b[k][0]=L[k_valid[k]]*L[k_valid[k]]-d_2[k_valid[k]];
+		}
+
+
+		if(n<N)
+		{
+			/* Recalculate constants */
+			find_denominator(k_valid,n,mode,&BT,&BTB,&detBTB);
+		}
+		else
+		{
+			BT=AT;
+			BTB=ATA;
+			detBTB=detATA;
+		}
+
+		if(detBTB==0)
+		{
+			*R=-1;
+			*phi=0;
+			*theta=0;
+		}
+		else
+		{
+			BTb=matrix_multiply(BT,mode,n,b,1);
+
+			/* Find numerators */
+			A1=(float**)calloc(mode,sizeof(float*));
+
+			for(k=0;k<mode;k++)
+			{
+				A1[k]=(float*)calloc(mode,sizeof(float));
+			}
+
+			x=(float*)calloc(mode,sizeof(float));
+
+			for(k=0;k<mode;k++)
+			{
+				/* Use column substitution to solve for x */
+				for(i=0;i<mode;i++)
+				{
+					for(j=0;j<mode;j++)
+					{
+						if(j==k)
+						{
+							A1[i][j]=BTb[i][0];
+						}
+						else
+						{
+							A1[i][j]=BTB[i][j];
+						}
+					}
+				}
+
+				detA1=determinant(A1,mode);
+
+				/* Solve linear system */
+				x[k]=detA1/detBTB;
+			}
+
+			/* Use x to find coordinates */
+			*R=sqrt(x[0])/2;
+			*phi=0;
+			*theta=pi/2;
+
+			if(mode==2)
+			{
+				*phi=(float)asin(-x[1]/(*R*4));
+			}
+
+			if(mode==3)
+			{
+				*theta=(float)acos(-x[2] / (*R * 4));
+				*phi=(float)asin(-x[1] / (*R * 4 *sin(*theta)));
+			}
+
+			convert_results(R,phi,theta); /* Convert results to correct units */
+		}
+
+		/* Free allocated memory */
+		free(k_valid);
+		free(b);
+
+		for(k=0;k<mode;k++)
+		{
+			free(A1[k]);
+			free(BTb[k]);
+		}
+		free(A1);
+		free(BTb);
+
+		free(x);
+
+		/* Do not free AT or ATA */
+		if(n<N)
+		{
+			for(k=0;k<mode;k++)
+			{
+				free(BT[k]);
+				free(BTB[k]);
+			}
+			free(BT);
+			free(BTB);
+		}
+
+
+	}
+}
+
+/* Converts coordinates to correct units */
+void convert_results(float *Rptr, float *phiptr, float *thetaptr)
+{
+	float R, phi, theta;
+	int dist_prec=1, angle_prec=5; /* Precision*/
+
+	R=*Rptr;
+	phi=*phiptr;
+	theta=*thetaptr;
+
+	R*=0.12544; /* Convert to cm */
+
+	/* Convert to degrees */
+	phi=phi*180/pi;
+	theta=theta*180/pi-90; /* Convert azimuth to elevation */
+
+	/* Round results */
+	R=dist_prec*floor(R/dist_prec+0.5);
+	phi=angle_prec*floor(phi/angle_prec+0.5);
+	theta=angle_prec*floor(theta/angle_prec+0.5);
+
+	*Rptr=R;
+	*phiptr=phi;
+	*thetaptr=theta;
+}
+
+
+void display_results(int mode, float R, float phi, float theta)
+{
+	/*
+	char line1[16] = {" D   R:   .  cm"};
+	switch (systemMode) {
+		case oneD:
+			line1[0] = 1 + 0x30;
+			break;
+		case twoD:
+			line1[0] = 2 + 0x30;
+			break;
+		case threeD:
+			line1[0] = 3 + 0x30;
+			break;
+		default:
+			line1[0] = 1 + 0x30;
+			break;
+	}
+	*/
+
+	char line2[16] = {"   % Y:000 E:000"};
+	line2[0] = (((threshold)/100)%10) 		+ 0x30;
+	line2[1] = (((threshold)/10)%10) 		+ 0x30;
+	line2[2] = ((threshold)%10) 			+ 0x30;
+
+
+	if(R<0) {}
+	else {
+		int Rout = R*100;
+		/* Print results */
+		/*
+		line1[7]			= (((Rout)/10000)%10)		+ 0x30;
+		line1[8] 			= (((Rout)/1000)%10)		+ 0x30;
+		line1[9] 			= (((Rout)/100)%10) 		+ 0x30;
+		line1[11] 			= (((Rout)/10)%10) 		+ 0x30;
+		line1[12]			= (((Rout))%10) 		+ 0x30;*/
+
+		//LCD_update();
+
+		int phiOut = phi;//*100;
+		int thetaOut = theta;//*100;
+
+		if (phiOut != 0) {
+			line2[7] = ((phiOut/100)%10) + 0x30;
+			line2[8] = ((phiOut/10)%10) + 0x30;
+			line2[9] = (phiOut%10) + 0x30;
+		}
+
+		if (thetaOut != 0) {
+			if (thetaOut < 0) {
+				line2[13] = "-";
+				line2[14] = ((thetaOut/10)%10) + 0x30;
+				line2[15] = ((thetaOut)%10) + 0x30;
+			} else {
+				line2[13] = ((thetaOut/100)%10) + 0x30;
+				line2[14] = ((thetaOut/10)%10) + 0x30;
+				line2[15] = ((thetaOut)%10) + 0x30;
+			}
+		}
+
+		printf("%d\n", phiOut);
+		printf("%d\n\n", thetaOut);
+
+		switch (mode) {
+		case 2:
+			//	sprintf(line2,"Yaw: %3.0f",phi);
+			break;
+		case 3:
+			//sprintf(line2,"Yaw:%3.0f El:%3.0f",phi,theta);
+			break;
+		case 1:
+		default: break;
+		}
+
+		//LCD_Display(line1,1);
+		LCD_Display(line2,2);
+	}
+}
+
+/* Finds denominator matrix */
+void find_denominator(int *k_valid, int n, int mode, float ***MTptr, float ***MTMptr, float *detMTMptr)
+{
+	float **M, **MT, **MTM;
+	float detMTM;
+	int k;
+
+	/* Initial matrix */
+	M=(float**)calloc(n,sizeof(float*));
+
+	for(k=0;k<n;k++)
+	{
+		M[k]=(float*)calloc(mode,sizeof(float));
+
+		M[k][0]=1;
+		if(mode>1)
+		{
+			M[k][1]=y[k_valid[k]];
+		}
+		if(mode>2)
+		{
+			M[k][2]=z[k_valid[k]];
+		}
+	}
+
+	/* Output matrices */
+	MT=transpose(M,n,mode);
+	MTM=matrix_multiply(MT,mode,n,M,mode);
+
+	detMTM=determinant(MTM,mode);
+
+	*MTptr=MT;
+	*MTMptr=MTM;
+	*detMTMptr=detMTM;
+
+	/* Free allocated memory */
+	for(k=0;k<n;k++)
+	{
+		free(M[k]);
+	}
+	free(M);
+}
+
+
+/* Finds determinant of nxn matrix M
+n can be equal to 1, 2 or 3 */
+float determinant(float **M, int n)
+{
+	if(n==1)
+	{
+		return M[0][0];
+	}
+	else if(n==2)
+	{
+		return M[0][0]*M[1][1]-M[0][1]*M[1][0];
+	}
+	else if(n==3)
+	{
+		return M[0][0]*(M[1][1]*M[2][2]-M[1][2]*M[2][1])-M[0][1]*(M[1][0]*M[2][2]-M[1][2]*M[2][0])+M[0][2]*(M[1][0]*M[2][1]-M[1][1]*M[2][0]);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+/* Finds transpose of mxn matrix M */
+float **transpose(float **M, int m, int n)
+{
+	float **MT;
+	int i,j;
+
+	MT=(float**)calloc(n, sizeof(float*));
+
+	for(i=0;i<n;i++)
+	{
+		MT[i]=(float*)calloc(m,sizeof(float));
+		for(j=0;j<m;j++)
+		{
+			MT[i][j]=M[j][i];
+		}
+	}
+
+	return MT;
+
+}
+
+/* Multiplies mxn matrix B with nxp matrix C */
+float **matrix_multiply(float **B, int m, int n, float **C, int p)
+{
+	float **BC;
+	float bc;
+	int i, j, k;
+
+	BC=(float**)calloc(m,sizeof(float*));
+
+	for(i=0;i<m;i++)
+	{
+		BC[i]=(float*)calloc(p,sizeof(float));
+
+		for(k=0;k<p;k++)
+		{
+			bc=0;
+
+			for(j=0;j<n;j++)
+			{
+				bc+=B[i][j]*C[j][k];
+			}
+
+			BC[i][k]=bc;
+		}
+	}
+
+	return BC;
+}
+
+

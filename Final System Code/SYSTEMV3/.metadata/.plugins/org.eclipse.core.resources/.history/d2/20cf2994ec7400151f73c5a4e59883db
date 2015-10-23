@@ -1,0 +1,36 @@
+/*
+ * Precise answer: 58.1; NIOS Answer: +0.0021566% Error
+ * int n_test = quadInterp(1000000, 57, 93, 100, 99, 100, 95, 100);
+ *
+ * Precise answer: 58.041958; NIOS Answer: +0.0222351% Error
+ * int n_test = quadInterp(1000000, 57, 4415676025201, 13660598848400, 14488231808281, 14775262118400, 6581528571601, 15485119375600);
+ * printf("%d\n", n_test);
+ *
+ */
+
+#include <math.h>
+
+#include "alt_types.h"
+
+#include "quadraticInterpolator.h"
+
+int qInterp(int precision, int n1, alt_u64 Yn1num, alt_u64 Yn1den, alt_u64 Yn2num, alt_u64 Yn2den, alt_u64 Yn3num, alt_u64 Yn3den)
+{
+	float fYn1num = sqrt(Yn1num);
+	float fYn1den = sqrt(Yn1den);
+	float Yn1 = fYn1num / fYn1den;
+
+	float fYn2num = sqrt(Yn2num);
+	float fYn2den = sqrt(Yn2den);
+	float Yn2 = fYn2num / fYn2den;
+
+	float fYn3num = sqrt(Yn3num);
+	float fYn3den = sqrt(Yn3den);
+	float Yn3 = fYn3num / fYn3den;
+
+	alt_64 fraction = ( (3*Yn1) - (4*Yn2) + Yn3 ) * precision;
+	fraction /= ( 2*(Yn1 - (2*Yn2) + Yn3) );
+
+	int nTPT = (n1* precision) + fraction;
+	return nTPT;
+}

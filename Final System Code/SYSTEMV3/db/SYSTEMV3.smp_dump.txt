@@ -1,0 +1,49 @@
+
+State Machine - |main|ultrasonicReceiver:usonicRX_CH4_instant|FIR:FIR_instant|FIR_0002:fir_inst|FIR_0002_ast:FIR_0002_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |main|ultrasonicReceiver:usonicRX_CH3_instant|FIR:FIR_instant|FIR_0002:fir_inst|FIR_0002_ast:FIR_0002_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |main|ultrasonicReceiver:usonicRX_CH2_instant|FIR:FIR_instant|FIR_0002:fir_inst|FIR_0002_ast:FIR_0002_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |main|ultrasonicReceiver:usonicRX_CH1_instant|FIR:FIR_instant|FIR_0002:fir_inst|FIR_0002_ast:FIR_0002_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |main|ultrasonicReceiver:usonicRX_CH0_instant|FIR:FIR_instant|FIR_0002:fir_inst|FIR_0002_ast:FIR_0002_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |main|NIOS_SYSTEMV3:NIOS_instant|NIOS_SYSTEMV3_NIOS_CPU:nios_cpu|NIOS_SYSTEMV3_NIOS_CPU_nios2_oci:the_NIOS_SYSTEMV3_NIOS_CPU_nios2_oci|NIOS_SYSTEMV3_NIOS_CPU_jtag_debug_module_wrapper:the_NIOS_SYSTEMV3_NIOS_CPU_jtag_debug_module_wrapper|NIOS_SYSTEMV3_NIOS_CPU_jtag_debug_module_tck:the_NIOS_SYSTEMV3_NIOS_CPU_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

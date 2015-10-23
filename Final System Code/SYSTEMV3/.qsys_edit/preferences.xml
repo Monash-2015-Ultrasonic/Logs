@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="143" />
+   <irq preferredWidth="34" />
+   <name preferredWidth="249" />
+   <export preferredWidth="187" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="478" />
+   <clocksource preferredWidth="477" />
+   <frequency preferredWidth="467" />
+  </columns>
+ </clocktable>
+ <library
+   expandedCategories="Library,Project,Library/Qsys Interconnect/Tri-State Components,Library/Bridges/Memory-Mapped,Library/Bridges,Library/Qsys Interconnect" />
+ <window width="1920" height="1032" x="0" y="0" />
+ <hdlexample language="VERILOG" />
+</preferences>

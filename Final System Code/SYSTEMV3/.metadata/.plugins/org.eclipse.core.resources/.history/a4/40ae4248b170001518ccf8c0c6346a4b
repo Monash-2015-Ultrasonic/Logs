@@ -1,0 +1,66 @@
+//#define RUN
+
+//#define ADC_TEST
+//#define FIFO_ADC_TEST
+//#define SUBTRACTOR_TEST
+//#define IMPULSE_RESPONSE_TEST
+//#define MULTIPLIER_TEST
+//#define SUMXSQ_TEST
+//#define TIMER_TEST
+#define DETECTION_TEST
+
+#include <unistd.h>
+
+#include "config.h"
+#include "LCD.h"
+#include "tests.h"
+
+int main()
+{ 
+	// Initialise SYSTEM components:
+	usleep(10000);
+	init_SYSTEM();
+
+	// SYSTEM READY TO RUN:
+	char line1[16] = {"1D   R:      cm"};
+	LCD_Display(line1, 1);
+
+	char line2[16] = {"   % T:NA  P:NA "};
+	line2[0] = (((threshold+1)/100)%10) 	+ 0x30;
+	line2[1] = (((threshold+1)/10)%10) 		+ 0x30;
+	line2[2] = ((threshold+1)%10) 			+ 0x30;
+	LCD_Display(line2, 2);
+
+#ifdef RUN
+	START();
+#endif
+
+	while (1) {
+#ifdef ADC_TEST
+		ADC_test();				// Verify that ADC is intialised, flushed and reading correctly
+#elif FIFO_ADC_TEST
+		FIFO_ADC_test();		// Verify FIFO that stores SAMPLES for FIR Input
+#elif SUBTRACTOR_TEST
+		SUBTRACTOR_test();		// Verify SUBTRACTOR for SAMPLES is correctly storing into FIFO
+#elif IMPULSE_RESPONSE_TEST
+		Impulse_test(AUTO); 	// Verify FIR operation and Impulse Response, and verify FIFO for FIR Output
+#elif MULTIPLIER_TEST
+		MULTIPLIER_test(); 		// Verify X^2
+#elif SUMXSQ_TEST
+		sumXsq_test();			// Verify sum(X^2) of FIR, and verify FIFO that holds sum(X^2) matching to FIR Output order
+#elif TIMER_TEST
+		TIMER_test();			// Verify Timer
+#elif DETECTION_TEST
+		DETECTION_test();
+#elif RUN
+		// Detection & Arithmetic
+		//usleep(0.25 seconds);
+#else
+		usleep(0.25 seconds);
+#endif
+	}
+
+	return 0;
+}
+
+

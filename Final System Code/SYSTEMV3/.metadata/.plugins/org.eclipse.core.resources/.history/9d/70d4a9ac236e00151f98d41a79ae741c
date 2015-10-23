@@ -1,0 +1,10 @@
+#ifndef _FUNCTIONS_H_
+#define _FUNCTIONS_H_
+
+enum impulseMode {MANUAL, ADC};
+
+void init_SYSTEM(void);
+void NIOS_impulse_test(void);
+
+#endif
+

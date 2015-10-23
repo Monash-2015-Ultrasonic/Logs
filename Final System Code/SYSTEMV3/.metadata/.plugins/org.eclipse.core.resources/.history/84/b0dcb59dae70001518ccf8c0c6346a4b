@@ -1,0 +1,53 @@
+//#define RUN
+
+//#define ADC_TEST
+//#define FIFO_ADC_TEST
+//#define SUBTRACTOR_TEST
+//#define IMPULSE_RESPONSE_TEST
+//#define SUMXSQ_TEST
+//#define TIMER_TEST
+//#define DETECTION_TEST
+
+#include <unistd.h>
+
+#include "sys/alt_stdio.h"
+#include "alt_types.h"
+#include "system.h"
+#include "io.h"
+
+
+int main()
+{ 
+	// Initialise SYSTEM components:
+	usleep(10000);
+	init_SYSTEM();
+
+	// SYSTEM READY TO RUN:
+	char line1[16] = {"1D   R:      cm"};
+	LCD_Display(line1, 1);
+
+	char line2[16] = {"   % T:NA  P:NA "};
+	line2[0] = (((threshold+1)/100)%10) 	+ 0x30;
+	line2[1] = (((threshold+1)/10)%10) 		+ 0x30;
+	line2[2] = ((threshold+1)%10) 			+ 0x30;
+	LCD_Display(line2, 2);
+
+	//START();
+
+
+	while (1) {
+		ADC_test();				// Verify ADC
+		FIFO_ADC_test();			// Verify ADC FIFO
+		SUBTRACTOR_test();		// Verify FIR Input Subtractor
+		Impulse_test(MANUAL); 	// Verify FIR, FIR Impulse Response, FIR FIFO
+		MULTIPLIER_test(); 		// Verify X_currentSq
+		sumXsq_test();			// Verify sumXsq, sumXsq FIFO
+		TIMER_test();				// Verify Timer
+
+		DETECTION_test();
+	}
+
+	return 0;
+}
+
+

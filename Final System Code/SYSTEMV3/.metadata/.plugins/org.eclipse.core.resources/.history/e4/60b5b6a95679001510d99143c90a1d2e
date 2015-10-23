@@ -1,0 +1,42 @@
+#include <unistd.h>
+
+#include "config.h"
+#include "LCD.h"
+#include "tests.h"
+#include "RuntimeFunctions.h"
+
+int main()
+{ 
+	// Initialise SYSTEM components:
+	usleep(0.1 seconds);
+	init_SYSTEM();
+
+#ifdef RUN
+	start_SYSTEM();
+#endif
+
+
+	while (1) {
+#ifdef ADC_TEST
+		ADC_test();				// Verify that ADC is intialised, flushed and reading correctly
+#elif defined FIFO_ADC_TEST
+		FIFO_ADC_test();		// Verify FIFO that stores SAMPLES for FIR Input
+#elif defined IMPULSE_RESPONSE_TEST
+		IMPULSE_test(AUTO); 	// Verify FIR operation and Impulse Response, and verify FIFO for FIR Output
+#elif defined SUMXSQ_TEST
+		sumXsq_test();			// Verify sum(X^2) of FIR, and verify FIFO that holds sum(X^2) matching to FIR Output order
+#elif defined DETECTION_TEST
+		DETECTION_test();		// Run a test vector to make sure Detection and Quadratic Interpolation are functioning
+#elif defined RUN
+		// Running loop: Sample for any detections on the 5 Channels,
+		// Then perform arithmetic to solve system of equations for R, Yaw and Elevation.
+		sampleChannels();
+		find_coordinates(counter,Nreceivers,calc_mode,&R,&phi,&theta);
+		display_results(calc_mode, R, phi, theta);
+#else
+		usleep(0.25 seconds);
+#endif
+	}
+
+	return 0;
+}

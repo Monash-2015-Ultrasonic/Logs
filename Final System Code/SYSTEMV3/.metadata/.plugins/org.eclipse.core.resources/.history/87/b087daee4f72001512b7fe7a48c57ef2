@@ -1,0 +1,57 @@
+//#define RUN
+
+//#define ADC_TEST
+//#define FIFO_ADC_TEST
+//#define SUBTRACTOR_TEST
+//#define IMPULSE_RESPONSE_TEST
+//#define MULTIPLIER_TEST
+//#define SUMXSQ_TEST
+//#define TIMER_TEST
+#define DETECTION_TEST
+
+#include <unistd.h>
+
+#include "config.h"
+#include "LCD.h"
+#include "tests.h"
+
+int main()
+{ 
+	// Initialise SYSTEM components:
+	usleep(0.1 seconds);
+	init_SYSTEM(BOOT);
+
+#ifdef RUN
+	start_SYSTEM();
+#endif
+
+	while (1) {
+#ifdef ADC_TEST
+		ADC_test();				// Verify that ADC is intialised, flushed and reading correctly
+#elif defined FIFO_ADC_TEST
+		FIFO_ADC_test();		// Verify FIFO that stores SAMPLES for FIR Input
+#elif defined SUBTRACTOR_TEST
+		SUBTRACTOR_test();		// Verify SUBTRACTOR for SAMPLES is correctly storing into FIFO
+#elif defined IMPULSE_RESPONSE_TEST
+		IMPULSE_test(AUTO); 	// Verify FIR operation and Impulse Response, and verify FIFO for FIR Output
+#elif defined MULTIPLIER_TEST
+		MULTIPLIER_test(); 		// Verify X^2
+#elif defined SUMXSQ_TEST
+		sumXsq_test();			// Verify sum(X^2) of FIR, and verify FIFO that holds sum(X^2) matching to FIR Output order
+#elif defined TIMER_TEST
+		TIMER_test();			// Verify Timer
+#elif defined DETECTION_TEST
+		DETECTION_test();
+#elif defined RUN
+		// Detection & Arithmetic
+		//usleep(0.25 seconds);
+#else
+		usleep(0.25 seconds);
+#endif
+		//menu_SYSTEM();
+	}
+
+	return 0;
+}
+
+

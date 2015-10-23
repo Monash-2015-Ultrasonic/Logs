@@ -1,0 +1,8 @@
+#ifndef _FUNCTIONS_H_
+#define _FUNCTIONS_H_
+
+
+void init_SYSTEM(void);
+
+#endif
+

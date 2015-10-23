@@ -1,0 +1,179 @@
+/*
+ * FILE: 				config.h
+ * AUTHOR:				Ian HUA
+ * DATE LAST MODIFIED:	23 October 2015
+ *
+ * DESCRIPTION:			Contain settings Correlation Threshold,
+ * 						Valid detection threshold, and system initialisation sequence
+ *
+ */
+
+
+#define THRESHOLD 			79			// Correlation threshold
+#define MAX_DIFF 			500			// Distance threshold for valid detections
+
+#define RUN
+
+//#define ADC_TEST
+//#define FIFO_ADC_TEST
+//#define IMPULSE_RESPONSE_TEST
+//#define SUMXSQ_TEST
+//#define DETECTION_TEST
+
+//#define EVALUATE_PERCHANNEL
+//#define EVALUATE_3D
+
+#include <unistd.h>
+
+#include "alt_types.h"
+
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
+
+#define seconds 					*1000000
+
+#define SUBTRACTOR_OFFSET			0x7FF		// Default 2.500 Volts
+#define SUBTRACTOR_OFFSET_CH0 		0x7C2		// 2.4256 Volts
+#define SUBTRACTOR_OFFSET_CH1		0x7BD		// 2.4192 Volts
+#define SUBTRACTOR_OFFSET_CH2		0x7BD		// 2.4198 Volts
+#define SUBTRACTOR_OFFSET_CH3		0x7B9		// 2.4150 Volts
+#define SUBTRACTOR_OFFSET_CH4		0x7BF		// 2.4216 Volts
+
+
+//===============================
+// Function Declarations:
+//===============================
+void init_ADC(void);
+void init_FIR(void);
+void init_FIFO(void);
+void init_TIMER(void);
+void init_DETECTOR(void);
+void init_SYSTEM(void);
+void start_SYSTEM(void);
+
+//===============================
+// LCD:
+//===============================
+char line1[16];
+char line2[16];
+void LCD_update(void);
+
+//===============================
+// Shared Channel Controls:
+//===============================
+alt_8 threshold;
+volatile int *data, *data_valid;
+volatile int *fifo_rst;
+volatile int *sub_on, *det_on, *adc_on;
+
+//===============================
+// Channel 0 Declarations:
+//===============================
+volatile int *CH0_timer_rst;
+volatile int *CH0_threshold;
+volatile int *CH0_peakFound;
+volatile int *CH0_RD;
+volatile int *CH0_TIME;
+volatile int *CH0_Yn1L;
+volatile int *CH0_Yn1ML;
+volatile int *CH0_Yn1MU;
+volatile int *CH0_Yn1U;
+volatile int *CH0_Yn2L;
+volatile int *CH0_Yn2ML;
+volatile int *CH0_Yn2MU;
+volatile int *CH0_Yn2U;
+volatile int *CH0_Yn3L;
+volatile int *CH0_Yn3ML;
+volatile int *CH0_Yn3MU;
+volatile int *CH0_Yn3U;
+
+
+//===============================
+// Channel 1 Declarations:
+//===============================
+volatile int *CH1_timer_rst;
+volatile int *CH1_threshold;
+volatile int *CH1_peakFound;
+volatile int *CH1_RD;
+volatile int *CH1_TIME;
+volatile int *CH1_Yn1L;
+volatile int *CH1_Yn1ML;
+volatile int *CH1_Yn1MU;
+volatile int *CH1_Yn1U;
+volatile int *CH1_Yn2L;
+volatile int *CH1_Yn2ML;
+volatile int *CH1_Yn2MU;
+volatile int *CH1_Yn2U;
+volatile int *CH1_Yn3L;
+volatile int *CH1_Yn3ML;
+volatile int *CH1_Yn3MU;
+volatile int *CH1_Yn3U;
+
+
+//===============================
+// Channel 2 Declarations:
+//===============================
+volatile int *CH2_timer_rst;
+volatile int *CH2_threshold;
+volatile int *CH2_peakFound;
+volatile int *CH2_RD;
+volatile int *CH2_TIME;
+volatile int *CH2_Yn1L;
+volatile int *CH2_Yn1ML;
+volatile int *CH2_Yn1MU;
+volatile int *CH2_Yn1U;
+volatile int *CH2_Yn2L;
+volatile int *CH2_Yn2ML;
+volatile int *CH2_Yn2MU;
+volatile int *CH2_Yn2U;
+volatile int *CH2_Yn3L;
+volatile int *CH2_Yn3ML;
+volatile int *CH2_Yn3MU;
+volatile int *CH2_Yn3U;
+
+
+//===============================
+// Channel 3 Declarations:
+//===============================
+volatile int *CH3_timer_rst;
+volatile int *CH3_threshold;
+volatile int *CH3_peakFound;
+volatile int *CH3_RD;
+volatile int *CH3_TIME;
+volatile int *CH3_Yn1L;
+volatile int *CH3_Yn1ML;
+volatile int *CH3_Yn1MU;
+volatile int *CH3_Yn1U;
+volatile int *CH3_Yn2L;
+volatile int *CH3_Yn2ML;
+volatile int *CH3_Yn2MU;
+volatile int *CH3_Yn2U;
+volatile int *CH3_Yn3L;
+volatile int *CH3_Yn3ML;
+volatile int *CH3_Yn3MU;
+volatile int *CH3_Yn3U;
+
+
+//===============================
+// Channel 4 Declarations:
+//===============================
+volatile int *CH4_timer_rst;
+volatile int *CH4_threshold;
+volatile int *CH4_peakFound;
+volatile int *CH4_RD;
+volatile int *CH4_TIME;
+volatile int *CH4_Yn1L;
+volatile int *CH4_Yn1ML;
+volatile int *CH4_Yn1MU;
+volatile int *CH4_Yn1U;
+volatile int *CH4_Yn2L;
+volatile int *CH4_Yn2ML;
+volatile int *CH4_Yn2MU;
+volatile int *CH4_Yn2U;
+volatile int *CH4_Yn3L;
+volatile int *CH4_Yn3ML;
+volatile int *CH4_Yn3MU;
+volatile int *CH4_Yn3U;
+
+#endif
+

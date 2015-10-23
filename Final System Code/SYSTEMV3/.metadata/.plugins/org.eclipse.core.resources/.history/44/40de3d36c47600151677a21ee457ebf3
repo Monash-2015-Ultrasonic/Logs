@@ -1,0 +1,10 @@
+#ifndef _RUNTIMEFUNCTIONS_H_
+#define _RUNTIMEFUNCTIONS_H_
+
+int distance;
+
+alt_u64 qInterp(int precision, int n1, alt_u64 Yn1num, alt_u64 Yn1den, alt_u64 Yn2num, alt_u64 Yn2den, alt_u64 Yn3num, alt_u64 Yn3den);
+
+void detectionCallback(void);
+
+#endif

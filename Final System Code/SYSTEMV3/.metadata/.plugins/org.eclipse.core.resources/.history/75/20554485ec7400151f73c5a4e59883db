@@ -1,0 +1,6 @@
+#ifndef _QUADRATICINTERPOLATOR_H_
+#define _QUADRATICINTERPOLATOR_H_
+
+int quadInterp(int precision, int n1, alt_u64 Yn1num, alt_u64 Yn1den, alt_u64 Yn2num, alt_u64 Yn2den, alt_u64 Yn3num, alt_u64 Yn3den);
+
+#endif

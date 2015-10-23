@@ -1,0 +1,44 @@
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
+
+#define seconds *1000000
+
+#define SUBTRACTOR_OFFSET 0x7FF
+
+volatile int *data;
+volatile int *data_valid;
+
+volatile int *adc_on;
+
+volatile int *fifo_rst;
+
+volatile int *sub_on;
+volatile int *det_on;
+
+volatile int *threshA;
+volatile int *sumHsqCH0;
+
+volatile int *timer_CH0_rst;
+volatile int *CH0_detect;
+volatile int *CH0_time;
+
+
+typedef enum FIR_Modes {MANUAL, AUTO, ADC} impulseMode;
+
+int threshold;
+
+void init_SYSTEM(void);
+
+void ADC_test(void);
+void FIFO_ADC_test(void);
+void SUBTRACTOR_test(void);
+void impulse_test(impulseMode mode);
+void MULTIPLIER_test(void);
+void sumXsq_test(void);
+void TIMER_test(void);
+void DETECTION_test(void);
+
+void START(void);
+
+#endif
+

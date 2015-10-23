@@ -1,0 +1,39 @@
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
+
+#define THRESHOLD 			79;
+
+#define seconds 			*1000000
+#define SUBTRACTOR_OFFSET 	0x7FF
+
+typedef enum initModes {BOOT, RECONFIGURE} initMode;
+
+volatile int *data, *data_valid;
+
+volatile int *fifo_rst;
+
+volatile int *sub_on, *det_on, *adc_on;
+
+volatile int *menu, *menuUP, *menuDOWN;
+
+volatile int *threshA;
+
+volatile int *sumHsqCH0;
+volatile int *timer_CH0_rst;
+volatile int *CH0_detect;
+volatile int *CH0_time;
+
+int threshold;
+
+void init_ADC(void);
+void init_FIR(void);
+void init_FIFO(void);
+void init_TIMER(void);
+void init_DETECTOR(void);
+
+void init_SYSTEM(void);
+void start_SYSTEM(void);
+void menu_SYSTEM(void);
+
+#endif
+

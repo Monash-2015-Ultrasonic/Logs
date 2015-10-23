@@ -1,0 +1,335 @@
+Flow report for SYSTEMV3
+Fri Oct 23 18:50:26 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Flow Summary                                                                          ;
++------------------------------------+--------------------------------------------------+
+; Flow Status                        ; Successful - Fri Oct 23 18:50:16 2015            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; SYSTEMV3                                         ;
+; Top-level Entity Name              ; main                                             ;
+; Family                             ; Cyclone II                                       ;
+; Device                             ; EP2C70F896C6                                     ;
+; Timing Models                      ; Final                                            ;
+; Total logic elements               ; 28,344 / 68,416 ( 41 % )                         ;
+;     Total combinational functions  ; 22,618 / 68,416 ( 33 % )                         ;
+;     Dedicated logic registers      ; 16,760 / 68,416 ( 24 % )                         ;
+; Total registers                    ; 16760                                            ;
+; Total pins                         ; 254 / 622 ( 41 % )                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 106,965 / 1,152,000 ( 9 % )                      ;
+; Embedded Multiplier 9-bit elements ; 45 / 300 ( 15 % )                                ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                   ;
++------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 10/23/2015 18:44:27 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; SYSTEMV3            ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                      ;
++-------------------------------------+-------------------------------------------------------------------------+---------------+----------------------------------------------------------+------------+
+; Assignment Name                     ; Value                                                                   ; Default Value ; Entity Name                                              ; Section Id ;
++-------------------------------------+-------------------------------------------------------------------------+---------------+----------------------------------------------------------+------------+
+; COMPILER_SIGNATURE_ID               ; 24062491136.144558626764452                                             ; --            ; --                                                       ; --         ;
+; ENABLE_SIGNALTAP                    ; Off                                                                     ; --            ; --                                                       ; --         ;
+; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                                                                      ; Off           ; --                                                       ; --         ;
+; IP_TOOL_ENV                         ; mwpim                                                                   ; --            ; FIR                                                      ; --         ;
+; IP_TOOL_ENV                         ; mwpim                                                                   ; --            ; FIR                                                      ; --         ;
+; IP_TOOL_ENV                         ; mwpim                                                                   ; --            ; FIR_0002                                                 ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3                                            ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_ADC_ON                                     ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_CH0_THRESH                                 ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_CH0_YN1_MU                                 ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_CH0_YN1_U                                  ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_FIFO_ADC_DATA                              ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_JTAG_UART                                  ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_LCD                                        ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_MENU                                       ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_MENU_DOWN                                  ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_NIOS_CPU                                   ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_RAM                                        ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_SSRAM                                      ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_addr_router                                ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_addr_router_001                            ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_cmd_xbar_demux                             ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_cmd_xbar_demux_001                         ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_cmd_xbar_mux                               ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_id_router                                  ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_id_router_003                              ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_irq_mapper                                 ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_demux                             ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_demux_003                         ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_mux                               ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_mux_001                           ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram                      ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer            ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer_arbiter    ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer_pin_sharer ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_avalon_sc_fifo                                    ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_merlin_master_agent                               ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_merlin_master_translator                          ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_merlin_slave_agent                                ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_merlin_slave_translator                           ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_reset_controller                                  ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_tristate_controller_aggregator                    ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                    ; --            ; altera_tristate_controller_translator                    ; --         ;
+; IP_TOOL_NAME                        ; ALTPLL                                                                  ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; LPM_COUNTER                                                             ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; FIFO                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; FIFO                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; LPM_MULT                                                                ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; Shift register (RAM-based)                                              ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; LPM_ADD_SUB                                                             ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; FIFO                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; LPM_MULT                                                                ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; LPM_MULT                                                                ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; FIFO                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; FIFO                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_NAME                        ; altera_fir_compiler_ii                                                  ; --            ; FIR                                                      ; --         ;
+; IP_TOOL_NAME                        ; altera_fir_compiler_ii                                                  ; --            ; FIR                                                      ; --         ;
+; IP_TOOL_NAME                        ; altera_fir_compiler_ii                                                  ; --            ; FIR_0002                                                 ; --         ;
+; IP_TOOL_NAME                        ; Qsys                                                                    ; --            ; NIOS_SYSTEMV3                                            ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                       ; --            ; NIOS_SYSTEMV3_ADC_ON                                     ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                       ; --            ; NIOS_SYSTEMV3_CH0_THRESH                                 ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                       ; --            ; NIOS_SYSTEMV3_CH0_YN1_MU                                 ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                       ; --            ; NIOS_SYSTEMV3_CH0_YN1_U                                  ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                       ; --            ; NIOS_SYSTEMV3_FIFO_ADC_DATA                              ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_jtag_uart                                                 ; --            ; NIOS_SYSTEMV3_JTAG_UART                                  ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_lcd_16207                                                 ; --            ; NIOS_SYSTEMV3_LCD                                        ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                       ; --            ; NIOS_SYSTEMV3_MENU                                       ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                       ; --            ; NIOS_SYSTEMV3_MENU_DOWN                                  ; --         ;
+; IP_TOOL_NAME                        ; altera_nios2_qsys                                                       ; --            ; NIOS_SYSTEMV3_NIOS_CPU                                   ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_onchip_memory2                                            ; --            ; NIOS_SYSTEMV3_RAM                                        ; --         ;
+; IP_TOOL_NAME                        ; altera_generic_tristate_controller                                      ; --            ; NIOS_SYSTEMV3_SSRAM                                      ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                                    ; --            ; NIOS_SYSTEMV3_addr_router                                ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                                    ; --            ; NIOS_SYSTEMV3_addr_router_001                            ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                                             ; --            ; NIOS_SYSTEMV3_cmd_xbar_demux                             ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                                             ; --            ; NIOS_SYSTEMV3_cmd_xbar_demux_001                         ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                                               ; --            ; NIOS_SYSTEMV3_cmd_xbar_mux                               ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                                    ; --            ; NIOS_SYSTEMV3_id_router                                  ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                                    ; --            ; NIOS_SYSTEMV3_id_router_003                              ; --         ;
+; IP_TOOL_NAME                        ; altera_irq_mapper                                                       ; --            ; NIOS_SYSTEMV3_irq_mapper                                 ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                                             ; --            ; NIOS_SYSTEMV3_rsp_xbar_demux                             ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                                             ; --            ; NIOS_SYSTEMV3_rsp_xbar_demux_003                         ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                                               ; --            ; NIOS_SYSTEMV3_rsp_xbar_mux                               ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                                               ; --            ; NIOS_SYSTEMV3_rsp_xbar_mux_001                           ; --         ;
+; IP_TOOL_NAME                        ; altera_tristate_conduit_bridge                                          ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram                      ; --         ;
+; IP_TOOL_NAME                        ; altera_tristate_conduit_pin_sharer                                      ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer            ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_std_arbitrator                                            ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer_arbiter    ; --         ;
+; IP_TOOL_NAME                        ; altera_tristate_conduit_pin_sharer_core                                 ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer_pin_sharer ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_sc_fifo                                                   ; --            ; altera_avalon_sc_fifo                                    ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_master_agent                                              ; --            ; altera_merlin_master_agent                               ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_master_translator                                         ; --            ; altera_merlin_master_translator                          ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_slave_agent                                               ; --            ; altera_merlin_slave_agent                                ; --         ;
+; IP_TOOL_NAME                        ; altera_merlin_slave_translator                                          ; --            ; altera_merlin_slave_translator                           ; --         ;
+; IP_TOOL_NAME                        ; altera_reset_controller                                                 ; --            ; altera_reset_controller                                  ; --         ;
+; IP_TOOL_NAME                        ; altera_tristate_controller_aggregator                                   ; --            ; altera_tristate_controller_aggregator                    ; --         ;
+; IP_TOOL_NAME                        ; altera_tristate_controller_translator                                   ; --            ; altera_tristate_controller_translator                    ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; --                                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0sp1                                                                 ; --            ; FIR                                                      ; --         ;
+; IP_TOOL_VERSION                     ; 13.0sp1                                                                 ; --            ; FIR                                                      ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; FIR_0002                                                 ; --         ;
+; IP_TOOL_VERSION                     ; 13.0sp1                                                                 ; --            ; NIOS_SYSTEMV3                                            ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_ADC_ON                                     ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_CH0_THRESH                                 ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_CH0_YN1_MU                                 ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_CH0_YN1_U                                  ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_FIFO_ADC_DATA                              ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_JTAG_UART                                  ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_LCD                                        ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_MENU                                       ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_MENU_DOWN                                  ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_NIOS_CPU                                   ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                             ; --            ; NIOS_SYSTEMV3_RAM                                        ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_SSRAM                                      ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_addr_router                                ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_addr_router_001                            ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_cmd_xbar_demux                             ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_cmd_xbar_demux_001                         ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_cmd_xbar_mux                               ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_id_router                                  ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_id_router_003                              ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_irq_mapper                                 ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_demux                             ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_demux_003                         ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_mux                               ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_rsp_xbar_mux_001                           ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram                      ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer            ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer_arbiter    ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; NIOS_SYSTEMV3_tristate_bridge_ssram_pinSharer_pin_sharer ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_avalon_sc_fifo                                    ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_merlin_master_agent                               ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_merlin_master_translator                          ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_merlin_slave_agent                                ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_merlin_slave_translator                           ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_reset_controller                                  ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_tristate_controller_aggregator                    ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                                                                    ; --            ; altera_tristate_controller_translator                    ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                      ; --            ; --                                                       ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                       ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/CLK_PLL/CLKPLL_inst.v                                         ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/CLK_PLL/CLKPLL_bb.v                                           ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/CLK_PLL/CLKPLL.ppf                                            ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; NIOS_SYSTEMV3/synthesis/../../NIOS_SYSTEMV3.cmp                         ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; NIOS_SYSTEMV3/synthesis/../../NIOS_SYSTEMV3.qsys                        ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/COUNTER/COUNTER_inst.v                                        ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/COUNTER/COUNTER_bb.v                                          ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_ADC/FIFO_ADC_inst.v                                      ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_ADC/FIFO_ADC_bb.v                                        ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR.cmp                                                   ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/altera_avalon_sc_fifo.v                           ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/auk_dspip_math_pkg_hpfir.vhd                      ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/auk_dspip_lib_pkg_hpfir.vhd                       ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/auk_dspip_avalon_streaming_controller_hpfir.vhd   ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/auk_dspip_avalon_streaming_sink_hpfir.vhd         ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/auk_dspip_avalon_streaming_source_hpfir.vhd       ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/auk_dspip_roundsat_hpfir.vhd                      ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/dspba_library_package.vhd                         ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/dspba_library.vhd                                 ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_rtl.vhd                                       ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_ast.vhd                                       ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR.vhd                                           ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_nativelink.tcl                                ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_msim.tcl                                      ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_tb.vhd                                        ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_mlab.m                                        ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_model.m                                       ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_coef_int.txt                                  ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_input.txt                                     ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIR/FIR_sim/FIR_param.txt                                     ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_FIR/FIFO_FIR_inst.v                                      ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_FIR/FIFO_FIR_bb.v                                        ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/MULT/MULT_inst.v                                              ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/MULT/MULT_bb.v                                                ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/SHIFTREGRAM/SHIFTREGRAM_inst.v                                ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/SHIFTREGRAM/SHIFTREGRAM_bb.v                                  ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/ADDSUBWIDE/ADDSUBWIDE_inst.v                                  ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/ADDSUBWIDE/ADDSUBWIDE_bb.v                                    ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_SUM_IN_SQUARED/FIFO_SUM_IN_SQUARED_inst.v                ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_SUM_IN_SQUARED/FIFO_SUM_IN_SQUARED_bb.v                  ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/MULT_FIRSQ/MULT_FIRSQ_inst.v                                  ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/MULT_FIRSQ/MULT_FIRSQ_bb.v                                    ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/MULT_sumXsq/MULT_sumXsq_inst.v                                ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/MULT_sumXsq/MULT_sumXsq_bb.v                                  ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_DETECTION_YN/FIFO_DETECTION_YN_inst.v                    ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_DETECTION_YN/FIFO_DETECTION_YN_bb.v                      ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_DETECTION_TIME/FIFO_DETECTION_TIME_inst.v                ; --            ; --                                                       ; --         ;
+; MISC_FILE                           ; Source/IP/FIFO_DETECTION_TIME/FIFO_DETECTION_TIME_bb.v                  ; --            ; --                                                       ; --         ;
+; NUM_PARALLEL_PROCESSORS             ; All                                                                     ; --            ; --                                                       ; --         ;
+; PARTITION_COLOR                     ; 16764057                                                                ; --            ; main                                                     ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                   ; --            ; main                                                     ; Top        ;
+; PARTITION_NETLIST_TYPE              ; POST_FIT                                                                ; --            ; main                                                     ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                     ; --            ; --                                                       ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                   ; --            ; --                                                       ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                            ; --            ; --                                                       ; --         ;
+; SAVE_DISK_SPACE                     ; Off                                                                     ; On            ; --                                                       ; --         ;
+; SLD_FILE                            ; C:/Users/MrBigBear/Desktop/SYSTEMV3/output_files/stp2_auto_stripped.stp ; --            ; --                                                       ; --         ;
+; SLD_INFO                            ; QSYS_NAME NIOS_SYSTEMV3 HAS_SOPCINFO 1 GENERATION_ID 1445554472         ; --            ; NIOS_SYSTEMV3                                            ; --         ;
+; SMART_RECOMPILE                     ; On                                                                      ; Off           ; --                                                       ; --         ;
+; SOPCINFO_FILE                       ; NIOS_SYSTEMV3/synthesis/../../NIOS_SYSTEMV3.sopcinfo                    ; --            ; --                                                       ; --         ;
+; SPD_FILE                            ; Source/IP/FIR/FIR.spd                                                   ; --            ; --                                                       ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                      ; --            ; --                                                       ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                      ; --            ; --                                                       ; --         ;
+; TOP_LEVEL_ENTITY                    ; main                                                                    ; SYSTEMV3      ; --                                                       ; --         ;
+; USE_SIGNALTAP_FILE                  ; output_files/stp2.stp                                                   ; --            ; --                                                       ; --         ;
++-------------------------------------+-------------------------------------------------------------------------+---------------+----------------------------------------------------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:02:50     ; 1.0                     ; 1229 MB             ; 00:02:45                           ;
+; Partition Merge           ; 00:00:08     ; 1.0                     ; 584 MB              ; 00:00:05                           ;
+; I/O Assignment Analysis   ; 00:00:27     ; 1.0                     ; 793 MB              ; 00:00:22                           ;
+; Fitter                    ; 00:01:56     ; 1.6                     ; 1622 MB             ; 00:02:33                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 568 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 857 MB              ; 00:00:07                           ;
+; Total                     ; 00:05:38     ; --                      ; --                  ; 00:05:57                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; I/O Assignment Analysis   ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEMV3 -c SYSTEMV3
+quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEMV3 -c SYSTEMV3 --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEMV3 -c SYSTEMV3 --check_ios
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEMV3 -c SYSTEMV3
+quartus_asm --read_settings_files=off --write_settings_files=off SYSTEMV3 -c SYSTEMV3
+quartus_sta SYSTEMV3 -c SYSTEMV3
+
+
+

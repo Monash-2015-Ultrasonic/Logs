@@ -1,0 +1,20 @@
+#ifndef _TEST_H_
+#define _TEST_H_
+
+typedef enum FIRMODES {MANUAL, AUTO, ADC} impulseMode;
+
+#ifdef ADC_TEST
+void ADC_test(void);
+#endif
+#ifdef FIFO_ADC_TEST
+void FIFO_ADC_test(void);
+#endif
+#ifdef IMPULSE_RESPONSE_TEST
+void IMPULSE_test(impulseMode mode);
+#endif
+#ifdef SUMXSQ_TEST
+void sumXsq_test(void);
+#endif
+void DETECTION_test(void);
+
+#endif

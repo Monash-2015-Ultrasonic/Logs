@@ -1,0 +1,13 @@
+#ifndef _TEST_H_
+#define _TEST_H_
+
+void ADC_test(void);
+void FIFO_ADC_test(void);
+void SUBTRACTOR_test(void);
+void impulse_test(impulseMode mode);
+void MULTIPLIER_test(void);
+void sumXsq_test(void);
+void TIMER_test(void);
+void DETECTION_test(void);
+
+#endif

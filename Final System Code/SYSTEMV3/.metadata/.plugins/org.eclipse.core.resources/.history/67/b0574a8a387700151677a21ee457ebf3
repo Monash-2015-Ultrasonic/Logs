@@ -1,0 +1,402 @@
+#define THRESHOLD 			99
+
+#include <unistd.h>
+
+#include "system.h"
+#include "io.h"
+
+#include "config.h"
+#include "LCD.h"
+#include "RuntimeFunctions.h"
+
+volatile int *data = 				(int *) FIFO_ADC_DATA_BASE;
+volatile int *data_valid = 			(int *) FIFO_ADC_DATA_VALID_BASE;
+
+volatile int *fifo_rst =			(int *) FIFO_RST_BASE;
+
+volatile int *sub_on =				(int *) SUBTRACTOR_ON_BASE;
+volatile int *det_on =				(int *) DETECTOR_ON_BASE;
+volatile int *adc_on =				(int *) ADC_ON_BASE;
+
+volatile int *menu =				(int *) MENU_BASE;
+volatile int *menuUP =				(int *) MENU_UP_BASE;
+volatile int *menuDOWN =			(int *) MENU_DOWN_BASE;
+
+volatile int *CH0_timer_rst = 		(int *) CH0_TIMER_RST_BASE;
+volatile int *CH0_threshold = 		(int *)	CH0_THRESH_BASE;
+volatile int *CH0_peakFound =		(int *) CH0_PEAK_FOUND_BASE;
+volatile int *CH0_RD =				(int *) CH0_RD_PEAK_BASE;
+volatile int *CH0_TIME =			(int *) CH0_TIME_BASE;
+volatile int *CH0_Yn1L =			(int *) CH0_YN1_L_BASE;
+volatile int *CH0_Yn1ML = 			(int *) CH0_YN1_ML_BASE;
+volatile int *CH0_Yn1MU =			(int *) CH0_YN1_MU_BASE;
+volatile int *CH0_Yn1U =			(int *) CH0_YN1_U_BASE;
+volatile int *CH0_Yn2L =			(int *) CH0_YN2_L_BASE;
+volatile int *CH0_Yn2ML = 			(int *) CH0_YN2_ML_BASE;
+volatile int *CH0_Yn2MU =			(int *) CH0_YN2_MU_BASE;
+volatile int *CH0_Yn2U =			(int *) CH0_YN2_U_BASE;
+volatile int *CH0_Yn3L =			(int *) CH0_YN3_L_BASE;
+volatile int *CH0_Yn3ML = 			(int *) CH0_YN3_ML_BASE;
+volatile int *CH0_Yn3MU =			(int *) CH0_YN3_MU_BASE;
+volatile int *CH0_Yn3U =			(int *) CH0_YN3_U_BASE;
+
+volatile int *CH1_timer_rst = 		(int *) CH1_TIMER_RST_BASE;
+volatile int *CH1_threshold = 		(int *)	CH1_THRESH_BASE;
+volatile int *CH1_peakFound =		(int *) CH1_PEAK_FOUND_BASE;
+volatile int *CH1_RD =				(int *) CH1_RD_PEAK_BASE;
+volatile int *CH1_TIME =			(int *) CH1_TIME_BASE;
+volatile int *CH1_Yn1L =			(int *) CH1_YN1_L_BASE;
+volatile int *CH1_Yn1ML = 			(int *) CH1_YN1_ML_BASE;
+volatile int *CH1_Yn1MU =			(int *) CH1_YN1_MU_BASE;
+volatile int *CH1_Yn1U =			(int *) CH1_YN1_U_BASE;
+volatile int *CH1_Yn2L =			(int *) CH1_YN2_L_BASE;
+volatile int *CH1_Yn2ML = 			(int *) CH1_YN2_ML_BASE;
+volatile int *CH1_Yn2MU =			(int *) CH1_YN2_MU_BASE;
+volatile int *CH1_Yn2U =			(int *) CH1_YN2_U_BASE;
+volatile int *CH1_Yn3L =			(int *) CH1_YN3_L_BASE;
+volatile int *CH1_Yn3ML = 			(int *) CH1_YN3_ML_BASE;
+volatile int *CH1_Yn3MU =			(int *) CH1_YN3_MU_BASE;
+volatile int *CH1_Yn3U =			(int *) CH1_YN3_U_BASE;
+
+volatile int *CH2_timer_rst = 		(int *) CH2_TIMER_RST_BASE;
+volatile int *CH2_threshold = 		(int *)	CH2_THRESH_BASE;
+volatile int *CH2_peakFound =		(int *) CH2_PEAK_FOUND_BASE;
+volatile int *CH2_RD =				(int *) CH2_RD_PEAK_BASE;
+volatile int *CH2_TIME =			(int *) CH2_TIME_BASE;
+volatile int *CH2_Yn1L =			(int *) CH2_YN1_L_BASE;
+volatile int *CH2_Yn1ML = 			(int *) CH2_YN1_ML_BASE;
+volatile int *CH2_Yn1MU =			(int *) CH2_YN1_MU_BASE;
+volatile int *CH2_Yn1U =			(int *) CH2_YN1_U_BASE;
+volatile int *CH2_Yn2L =			(int *) CH2_YN2_L_BASE;
+volatile int *CH2_Yn2ML = 			(int *) CH2_YN2_ML_BASE;
+volatile int *CH2_Yn2MU =			(int *) CH2_YN2_MU_BASE;
+volatile int *CH2_Yn2U =			(int *) CH2_YN2_U_BASE;
+volatile int *CH2_Yn3L =			(int *) CH2_YN3_L_BASE;
+volatile int *CH2_Yn3ML = 			(int *) CH2_YN3_ML_BASE;
+volatile int *CH2_Yn3MU =			(int *) CH2_YN3_MU_BASE;
+volatile int *CH2_Yn3U =			(int *) CH2_YN3_U_BASE;
+
+volatile int *CH3_timer_rst = 		(int *) CH3_TIMER_RST_BASE;
+volatile int *CH3_threshold = 		(int *)	CH3_THRESH_BASE;
+volatile int *CH3_peakFound =		(int *) CH3_PEAK_FOUND_BASE;
+volatile int *CH3_RD =				(int *) CH3_RD_PEAK_BASE;
+volatile int *CH3_TIME =			(int *) CH3_TIME_BASE;
+volatile int *CH3_Yn1L =			(int *) CH3_YN1_L_BASE;
+volatile int *CH3_Yn1ML = 			(int *) CH3_YN1_ML_BASE;
+volatile int *CH3_Yn1MU =			(int *) CH3_YN1_MU_BASE;
+volatile int *CH3_Yn1U =			(int *) CH3_YN1_U_BASE;
+volatile int *CH3_Yn2L =			(int *) CH3_YN2_L_BASE;
+volatile int *CH3_Yn2ML = 			(int *) CH3_YN2_ML_BASE;
+volatile int *CH3_Yn2MU =			(int *) CH3_YN2_MU_BASE;
+volatile int *CH3_Yn2U =			(int *) CH3_YN2_U_BASE;
+volatile int *CH3_Yn3L =			(int *) CH3_YN3_L_BASE;
+volatile int *CH3_Yn3ML = 			(int *) CH3_YN3_ML_BASE;
+volatile int *CH3_Yn3MU =			(int *) CH3_YN3_MU_BASE;
+volatile int *CH3_Yn3U =			(int *) CH3_YN3_U_BASE;
+
+volatile int *CH4_timer_rst = 		(int *) CH4_TIMER_RST_BASE;
+volatile int *CH4_threshold = 		(int *)	CH4_THRESH_BASE;
+volatile int *CH4_peakFound =		(int *) CH4_PEAK_FOUND_BASE;
+volatile int *CH4_RD =				(int *) CH4_RD_PEAK_BASE;
+volatile int *CH4_TIME =			(int *) CH4_TIME_BASE;
+volatile int *CH4_Yn1L =			(int *) CH4_YN1_L_BASE;
+volatile int *CH4_Yn1ML = 			(int *) CH4_YN1_ML_BASE;
+volatile int *CH4_Yn1MU =			(int *) CH4_YN1_MU_BASE;
+volatile int *CH4_Yn1U =			(int *) CH4_YN1_U_BASE;
+volatile int *CH4_Yn2L =			(int *) CH4_YN2_L_BASE;
+volatile int *CH4_Yn2ML = 			(int *) CH4_YN2_ML_BASE;
+volatile int *CH4_Yn2MU =			(int *) CH4_YN2_MU_BASE;
+volatile int *CH4_Yn2U =			(int *) CH4_YN2_U_BASE;
+volatile int *CH4_Yn3L =			(int *) CH4_YN3_L_BASE;
+volatile int *CH4_Yn3ML = 			(int *) CH4_YN3_ML_BASE;
+volatile int *CH4_Yn3MU =			(int *) CH4_YN3_MU_BASE;
+volatile int *CH4_Yn3U =			(int *) CH4_YN3_U_BASE;
+
+
+alt_8 threshold = THRESHOLD;
+alt_32 sumHsq_CH0 = 4370800;
+alt_32 sumHsq_CH1 = 4889989;
+alt_32 sumHsq_CH2 = 4418497;
+alt_32 sumHsq_CH3 = 5082823;
+alt_32 sumHsq_CH4 = 4889989;
+alt_64 thresholdMultiplier;
+
+runMode systemMode = oneD;
+
+int i;
+
+void init_ADC(void)
+{
+	// Initialise ADC:
+	LCD_Display("ADC     000/100", 2);
+
+	*fifo_rst = 0x1;
+	*adc_on = 0x1;
+
+	char temp1[16] = {"ADC     000/100"};
+	for (i = 0; i < 100; i++) {
+		temp1[8]  = (((i+1)/100)%10) 	+ 0x30;
+		temp1[9] = (((i+1)/10)%10) 		+ 0x30;
+		temp1[10] = ((i+1)%10) 			+ 0x30;
+		LCD_Display(temp1, 2);
+
+		usleep(50);
+	}
+
+	*adc_on = 0x0;
+	*fifo_rst = 0x0;
+}
+
+void init_FIR(void)
+{
+	// Initialise FIR Filter:
+	LCD_Display("FIR     000/256", 2);
+
+	char temp2[16] = {"FIR     000/256"};
+	for (i = 0; i < 256; i++) {
+		*data 		= 0x0000;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		temp2[8] = (((i+1)/100)%10) 	+ 0x30;
+		temp2[9] = (((i+1)/10)%10) 		+ 0x30;
+		temp2[10]=  ((i+1)%10) 			+ 0x30;
+		LCD_Display(temp2, 2);
+
+		usleep(50);
+	}
+}
+void init_FIFO(void)
+{
+	// Initialise FIFOs:
+	LCD_Display("FIFOs   000/100", 2);
+
+	*fifo_rst = 0x1;
+	usleep(100);
+	*fifo_rst = 0x0;
+
+	char temp3[16] = {"FIFOs   000/100"};
+	for (i = 0; i < 100; i++) {
+		*data 		= 0x0000;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		temp3[8] = (((i+1)/100)%10) 	+ 0x30;
+		temp3[9] = (((i+1)/10)%10) 		+ 0x30;
+		temp3[10]=  ((i+1)%10) 			+ 0x30;
+		LCD_Display(temp3, 2);
+
+		usleep(50);
+	}
+}
+void init_TIMER(void)
+{
+	*CH0_timer_rst = 0x1;
+	usleep(0.1 seconds);
+	*CH0_timer_rst = 0x0;
+
+	*CH1_timer_rst = 0x1;
+	usleep(0.1 seconds);
+	*CH1_timer_rst = 0x0;
+
+	*CH2_timer_rst = 0x1;
+	usleep(0.1 seconds);
+	*CH2_timer_rst = 0x0;
+
+	*CH3_timer_rst = 0x1;
+	usleep(0.1 seconds);
+	*CH3_timer_rst = 0x0;
+
+	*CH4_timer_rst = 0x1;
+	usleep(0.1 seconds);
+	*CH4_timer_rst = 0x0;
+}
+void init_DETECTOR(void)
+{
+	thresholdMultiplier = threshold * sumHsq_CH0 / 100;
+	thresholdMultiplier = thresholdMultiplier * threshold / 100;
+	*CH0_threshold	= thresholdMultiplier;
+
+	thresholdMultiplier = threshold * sumHsq_CH1 / 100;
+	thresholdMultiplier = thresholdMultiplier * threshold / 100;
+	*CH1_threshold	= thresholdMultiplier;
+
+	thresholdMultiplier = threshold * sumHsq_CH2 / 100;
+	thresholdMultiplier = thresholdMultiplier * threshold / 100;
+	*CH2_threshold	= thresholdMultiplier;
+
+	thresholdMultiplier = threshold * sumHsq_CH3 / 100;
+	thresholdMultiplier = thresholdMultiplier * threshold / 100;
+	*CH3_threshold	= thresholdMultiplier;
+
+	thresholdMultiplier = threshold * sumHsq_CH4 / 100;
+	thresholdMultiplier = thresholdMultiplier * threshold / 100;
+	*CH4_threshold	= thresholdMultiplier;
+}
+
+void init_SYSTEM(initMode initOption)
+{
+	// Set ADC, ADC FIFO & FIR OFF:
+		*fifo_rst 		= 0x0;
+		*data_valid 	= 0x0;
+		*adc_on 		= 0x0;
+		*sub_on			= 0x0;
+		*det_on  		= 0x0;
+
+		*CH0_threshold 	= 0xFFFFFFFF;
+		*CH0_RD			= 0x0;
+		*CH0_timer_rst 	= 0x1;
+
+		*CH1_threshold 	= 0xFFFFFFFF;
+		*CH1_RD			= 0x0;
+		*CH1_timer_rst 	= 0x1;
+
+		*CH2_threshold 	= 0xFFFFFFFF;
+		*CH2_RD			= 0x0;
+		*CH2_timer_rst 	= 0x1;
+
+		*CH3_threshold 	= 0xFFFFFFFF;
+		*CH3_RD			= 0x0;
+		*CH3_timer_rst 	= 0x1;
+
+		*CH4_threshold 	= 0xFFFFFFFF;
+		*CH4_RD			= 0x0;
+		*CH4_timer_rst 	= 0x1;
+
+		if (initOption == BOOT) {
+		// Start LCD:
+			LCD_Init();
+			LCD_Display("Ultrasonic Array", 1);
+			LCD_Display("Sensor - IH CA", 2);
+
+			usleep(1 seconds);
+
+			LCD_Display("Initialise:     ", 1);
+
+			init_ADC();
+			usleep(0.5 seconds);
+
+			// Check to make sure that ADC is functioning:
+			//*adc_on = 0x1;
+			//usleep(20);
+			//*adc_on = 0x0;
+		} else {
+			LCD_Display("Applying        ", 1);
+			LCD_Display("       Settings", 2);
+			usleep(0.5 seconds);
+
+			LCD_Display("Flushing:      ", 1);
+		}
+
+		init_FIR();
+		usleep(0.5 seconds);
+
+		init_FIFO();
+		init_TIMER();
+		init_DETECTOR();
+
+		find_constants();
+		change_mode(N_receivers,calc_mode);
+
+		*fifo_rst = 0x1;
+		usleep(0.1 seconds);
+		*fifo_rst = 0x0;
+
+		*det_on = 0x1;
+
+		usleep(1 seconds);
+
+		// SYSTEM READY TO RUN:
+		char line1[16] = {" D   R:   .  cm"};
+		switch (systemMode) {
+			case oneD:
+				line1[0] = 1 + 0x30;
+				break;
+			case twoD:
+				line1[0] = 2 + 0x30;
+				break;
+			case threeD:
+				line1[0] = 3 + 0x30;
+				break;
+			default:
+				line1[0] = 1 + 0x30;
+				break;
+		}
+		LCD_Display(line1, 1);
+
+		char line2[16] = {"   % Y:NA  E:NA "};
+		line2[0] = (((threshold)/100)%10) 	+ 0x30;
+		line2[1] = (((threshold)/10)%10) 		+ 0x30;
+		line2[2] = ((threshold)%10) 			+ 0x30;
+		LCD_Display(line2, 2);
+}
+
+void start_SYSTEM(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+
+	*sub_on		= 0x1;
+	usleep(0.1 seconds);
+	*adc_on		= 0x1;
+	*det_on		= 0x1;
+}
+
+void LCD_update(void)
+{
+	// SYSTEM READY TO RUN:
+	char line1[16] = {" D   R:   .  cm"};
+	switch (systemMode) {
+		case oneD:
+			line1[0] = 1 + 0x30;
+			break;
+		case twoD:
+			line1[0] = 2 + 0x30;
+			break;
+		case threeD:
+			line1[0] = 3 + 0x30;
+			break;
+		default:
+			line1[0] = 1 + 0x30;
+			break;
+	}
+
+	line1[7]			= (((distance)/1000000)%10)		+ 0x30;
+	line1[8] 			= (((distance)/100000)%10)		+ 0x30;
+	line1[9] 			= (((distance)/10000)%10) 		+ 0x30;
+	line1[11] 			= (((distance)/1000)%10) 		+ 0x30;
+	line1[12]			= (((distance)/100)%10) 		+ 0x30;
+
+	LCD_Display(line1, 1);
+/*
+	char line2[16] = {"   % T:NA  P:NA "};
+	line2[0] = (((threshold)/100)%10) 	+ 0x30;
+	line2[1] = (((threshold)/10)%10) 	+ 0x30;
+	line2[2] = ((threshold)%10) 		+ 0x30;
+	LCD_Display(line2, 2);
+*/
+}
+
+void display_mode(void)
+{
+	char line1[16] = {"MENU:          "};
+	char line2[16] = {"Mode:  -D      "};
+
+	switch (systemMode) {
+		case oneD:
+			line2[6] = 1 + 0x30;
+			break;
+		case twoD:
+			line2[6] = 2 + 0x30;
+			break;
+		case threeD:
+			line2[6] = 1 + 0x30;
+			break;
+		default:
+			line2[6] = 1 + 0x30;
+			break;
+	}
+
+	LCD_Display(line1, 1);
+	LCD_Display(line2, 2);
+}

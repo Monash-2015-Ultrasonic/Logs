@@ -1,0 +1,1355 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:/Users/MrBigBear/Desktop/SYSTEMV3/ --output-directory=C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3/ --report-file=bsf:C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3.bsf --system-info=DEVICE_FAMILY="Cyclone II" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3.qsys
+Progress: Loading SYSTEMV3/NIOS_SYSTEMV3.qsys
+Progress: Reading input file
+Progress: Adding CLK [clock_source 13.0]
+Progress: Parameterizing module CLK
+Progress: Adding NIOS_CPU [altera_nios2_qsys 13.0]
+Progress: Parameterizing module NIOS_CPU
+Progress: Adding RAM [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module RAM
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding LCD [altera_avalon_lcd_16207 13.0.1.99.2]
+Progress: Parameterizing module LCD
+Progress: Adding ADC_ON [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module ADC_ON
+Progress: Adding FIFO_ADC_DATA [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module FIFO_ADC_DATA
+Progress: Adding FIFO_ADC_DATA_VALID [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module FIFO_ADC_DATA_VALID
+Progress: Adding FIFO_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module FIFO_RST
+Progress: Adding SUBTRACTOR_ON [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module SUBTRACTOR_ON
+Progress: Adding CH0_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_TIMER_RST
+Progress: Adding DETECTOR_ON [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module DETECTOR_ON
+Progress: Adding MENU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module MENU
+Progress: Adding MENU_UP [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module MENU_UP
+Progress: Adding MENU_DOWN [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module MENU_DOWN
+Progress: Adding CH0_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_THRESH
+Progress: Adding CH0_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_RD_PEAK
+Progress: Adding CH0_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_PEAK_FOUND
+Progress: Adding CH0_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_U
+Progress: Adding CH0_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_MU
+Progress: Adding CH0_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_ML
+Progress: Adding CH0_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_L
+Progress: Adding CH0_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_TIME
+Progress: Adding CH0_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_U
+Progress: Adding CH0_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_MU
+Progress: Adding CH0_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_ML
+Progress: Adding CH0_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_L
+Progress: Adding CH0_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_U
+Progress: Adding CH0_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_MU
+Progress: Adding CH0_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_ML
+Progress: Adding CH0_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_L
+Progress: Adding CH1_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_TIMER_RST
+Progress: Adding CH1_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_THRESH
+Progress: Adding CH1_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_RD_PEAK
+Progress: Adding CH1_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_PEAK_FOUND
+Progress: Adding CH1_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_U
+Progress: Adding CH1_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_MU
+Progress: Adding CH1_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_ML
+Progress: Adding CH1_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_L
+Progress: Adding CH1_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_U
+Progress: Adding CH1_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_MU
+Progress: Adding CH1_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_ML
+Progress: Adding CH1_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_L
+Progress: Adding CH1_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_U
+Progress: Adding CH1_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_MU
+Progress: Adding CH1_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_ML
+Progress: Adding CH1_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_L
+Progress: Adding CH1_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_TIME
+Progress: Adding CH2_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_TIMER_RST
+Progress: Adding CH2_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_THRESH
+Progress: Adding CH2_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_RD_PEAK
+Progress: Adding CH2_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_PEAK_FOUND
+Progress: Adding CH2_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_TIME
+Progress: Adding CH2_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_U
+Progress: Adding CH2_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_MU
+Progress: Adding CH2_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_ML
+Progress: Adding CH2_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_L
+Progress: Adding CH2_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_U
+Progress: Adding CH2_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_MU
+Progress: Adding CH2_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_ML
+Progress: Adding CH2_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_L
+Progress: Adding CH2_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_U
+Progress: Adding CH2_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_MU
+Progress: Adding CH2_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_ML
+Progress: Adding CH2_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_L
+Progress: Adding CH3_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_TIMER_RST
+Progress: Adding CH3_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_THRESH
+Progress: Adding CH3_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_RD_PEAK
+Progress: Adding CH3_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_PEAK_FOUND
+Progress: Adding CH3_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_TIME
+Progress: Adding CH3_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_U
+Progress: Adding CH3_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_MU
+Progress: Adding CH3_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_ML
+Progress: Adding CH3_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_L
+Progress: Adding CH3_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_U
+Progress: Adding CH3_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_MU
+Progress: Adding CH3_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_ML
+Progress: Adding CH3_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_L
+Progress: Adding CH3_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_U
+Progress: Adding CH3_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_MU
+Progress: Adding CH3_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_ML
+Progress: Adding CH3_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_L
+Progress: Adding CH4_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_TIMER_RST
+Progress: Adding CH4_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_THRESH
+Progress: Adding CH4_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_RD_PEAK
+Progress: Adding CH4_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_PEAK_FOUND
+Progress: Adding CH4_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_TIME
+Progress: Adding CH4_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_U
+Progress: Adding CH4_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_MU
+Progress: Adding CH4_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_ML
+Progress: Adding CH4_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_L
+Progress: Adding CH4_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_U
+Progress: Adding CH4_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_MU
+Progress: Adding CH4_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_ML
+Progress: Adding CH4_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_L
+Progress: Adding CH4_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_U
+Progress: Adding CH4_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_MU
+Progress: Adding CH4_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_ML
+Progress: Adding CH4_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_L
+Progress: Adding SSRAM [altera_generic_tristate_controller 13.0]
+Progress: Parameterizing module SSRAM
+Progress: Adding tristate_bridge_ssram_pinSharer [altera_tristate_conduit_pin_sharer 13.0]
+Progress: Parameterizing module tristate_bridge_ssram_pinSharer
+Progress: Adding tristate_bridge_ssram [altera_tristate_conduit_bridge 13.0]
+Progress: Parameterizing module tristate_bridge_ssram
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: NIOS_SYSTEMV3.MENU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.MENU_UP: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.MENU_DOWN: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: NIOS_SYSTEMV3.SSRAM: Properties (isMemoryDevice) have been set on interface uas - in composed mode these are ignored
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:/Users/MrBigBear/Desktop/SYSTEMV3/ --output-directory=C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3.sopcinfo --report-file=html:C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3.html --report-file=qip:C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3/synthesis/NIOS_SYSTEMV3.qip --report-file=cmp:C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3.cmp --report-file=svd --system-info=DEVICE_FAMILY="Cyclone II" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3.qsys --language=VERILOG
+Progress: Loading SYSTEMV3/NIOS_SYSTEMV3.qsys
+Progress: Reading input file
+Progress: Adding CLK [clock_source 13.0]
+Progress: Parameterizing module CLK
+Progress: Adding NIOS_CPU [altera_nios2_qsys 13.0]
+Progress: Parameterizing module NIOS_CPU
+Progress: Adding RAM [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module RAM
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding LCD [altera_avalon_lcd_16207 13.0.1.99.2]
+Progress: Parameterizing module LCD
+Progress: Adding ADC_ON [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module ADC_ON
+Progress: Adding FIFO_ADC_DATA [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module FIFO_ADC_DATA
+Progress: Adding FIFO_ADC_DATA_VALID [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module FIFO_ADC_DATA_VALID
+Progress: Adding FIFO_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module FIFO_RST
+Progress: Adding SUBTRACTOR_ON [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module SUBTRACTOR_ON
+Progress: Adding CH0_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_TIMER_RST
+Progress: Adding DETECTOR_ON [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module DETECTOR_ON
+Progress: Adding MENU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module MENU
+Progress: Adding MENU_UP [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module MENU_UP
+Progress: Adding MENU_DOWN [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module MENU_DOWN
+Progress: Adding CH0_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_THRESH
+Progress: Adding CH0_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_RD_PEAK
+Progress: Adding CH0_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_PEAK_FOUND
+Progress: Adding CH0_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_U
+Progress: Adding CH0_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_MU
+Progress: Adding CH0_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_ML
+Progress: Adding CH0_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN1_L
+Progress: Adding CH0_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_TIME
+Progress: Adding CH0_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_U
+Progress: Adding CH0_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_MU
+Progress: Adding CH0_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_ML
+Progress: Adding CH0_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN2_L
+Progress: Adding CH0_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_U
+Progress: Adding CH0_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_MU
+Progress: Adding CH0_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_ML
+Progress: Adding CH0_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH0_YN3_L
+Progress: Adding CH1_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_TIMER_RST
+Progress: Adding CH1_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_THRESH
+Progress: Adding CH1_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_RD_PEAK
+Progress: Adding CH1_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_PEAK_FOUND
+Progress: Adding CH1_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_U
+Progress: Adding CH1_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_MU
+Progress: Adding CH1_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_ML
+Progress: Adding CH1_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN1_L
+Progress: Adding CH1_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_U
+Progress: Adding CH1_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_MU
+Progress: Adding CH1_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_ML
+Progress: Adding CH1_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN2_L
+Progress: Adding CH1_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_U
+Progress: Adding CH1_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_MU
+Progress: Adding CH1_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_ML
+Progress: Adding CH1_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_YN3_L
+Progress: Adding CH1_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH1_TIME
+Progress: Adding CH2_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_TIMER_RST
+Progress: Adding CH2_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_THRESH
+Progress: Adding CH2_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_RD_PEAK
+Progress: Adding CH2_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_PEAK_FOUND
+Progress: Adding CH2_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_TIME
+Progress: Adding CH2_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_U
+Progress: Adding CH2_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_MU
+Progress: Adding CH2_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_ML
+Progress: Adding CH2_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN1_L
+Progress: Adding CH2_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_U
+Progress: Adding CH2_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_MU
+Progress: Adding CH2_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_ML
+Progress: Adding CH2_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN2_L
+Progress: Adding CH2_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_U
+Progress: Adding CH2_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_MU
+Progress: Adding CH2_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_ML
+Progress: Adding CH2_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH2_YN3_L
+Progress: Adding CH3_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_TIMER_RST
+Progress: Adding CH3_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_THRESH
+Progress: Adding CH3_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_RD_PEAK
+Progress: Adding CH3_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_PEAK_FOUND
+Progress: Adding CH3_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_TIME
+Progress: Adding CH3_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_U
+Progress: Adding CH3_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_MU
+Progress: Adding CH3_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_ML
+Progress: Adding CH3_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN1_L
+Progress: Adding CH3_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_U
+Progress: Adding CH3_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_MU
+Progress: Adding CH3_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_ML
+Progress: Adding CH3_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN2_L
+Progress: Adding CH3_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_U
+Progress: Adding CH3_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_MU
+Progress: Adding CH3_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_ML
+Progress: Adding CH3_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH3_YN3_L
+Progress: Adding CH4_TIMER_RST [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_TIMER_RST
+Progress: Adding CH4_THRESH [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_THRESH
+Progress: Adding CH4_RD_PEAK [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_RD_PEAK
+Progress: Adding CH4_PEAK_FOUND [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_PEAK_FOUND
+Progress: Adding CH4_TIME [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_TIME
+Progress: Adding CH4_YN1_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_U
+Progress: Adding CH4_YN1_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_MU
+Progress: Adding CH4_YN1_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_ML
+Progress: Adding CH4_YN1_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN1_L
+Progress: Adding CH4_YN2_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_U
+Progress: Adding CH4_YN2_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_MU
+Progress: Adding CH4_YN2_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_ML
+Progress: Adding CH4_YN2_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN2_L
+Progress: Adding CH4_YN3_U [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_U
+Progress: Adding CH4_YN3_MU [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_MU
+Progress: Adding CH4_YN3_ML [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_ML
+Progress: Adding CH4_YN3_L [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module CH4_YN3_L
+Progress: Adding SSRAM [altera_generic_tristate_controller 13.0]
+Progress: Parameterizing module SSRAM
+Progress: Adding tristate_bridge_ssram_pinSharer [altera_tristate_conduit_pin_sharer 13.0]
+Progress: Parameterizing module tristate_bridge_ssram_pinSharer
+Progress: Adding tristate_bridge_ssram [altera_tristate_conduit_bridge 13.0]
+Progress: Parameterizing module tristate_bridge_ssram
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: NIOS_SYSTEMV3.MENU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.MENU_UP: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.MENU_DOWN: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH0_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH1_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH2_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH3_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_PEAK_FOUND: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_TIME: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN1_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN2_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_U: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_MU: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_ML: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NIOS_SYSTEMV3.CH4_YN3_L: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: NIOS_SYSTEMV3.SSRAM: Properties (isMemoryDevice) have been set on interface uas - in composed mode these are ignored
+Info: NIOS_SYSTEMV3: Generating NIOS_SYSTEMV3 "NIOS_SYSTEMV3" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 102 modules, 406 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_translator_transform: After transform: 203 modules, 806 connections
+Info: merlin_domain_transform: After transform: 404 modules, 2197 connections
+Info: merlin_router_transform: After transform: 505 modules, 2597 connections
+Info: reset_adaptation_transform: After transform: 507 modules, 2018 connections
+Info: merlin_network_to_switch_transform: After transform: 708 modules, 2424 connections
+Info: merlin_mm_transform: After transform: 708 modules, 2424 connections
+Info: merlin_interrupt_mapper_transform: After transform: 709 modules, 2427 connections
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: NIOS_SYSTEMV3: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Info: NIOS_CPU: Starting RTL generation for module 'NIOS_SYSTEMV3_NIOS_CPU'
+Info: NIOS_CPU:   Generation command is [exec F:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I F:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I F:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -I F:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -- F:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=NIOS_SYSTEMV3_NIOS_CPU --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0001_NIOS_CPU_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0001_NIOS_CPU_gen//NIOS_SYSTEMV3_NIOS_CPU_processor_configuration.pl  --do_build_sim=0    --bogus  ]
+Info: NIOS_CPU: # 2015.10.23 09:54:55 (*) Starting Nios II generation
+Info: NIOS_CPU: # 2015.10.23 09:54:56 (*)   Checking for plaintext license.
+Info: NIOS_CPU: # 2015.10.23 09:54:57 (*)   Plaintext license not found.
+Info: NIOS_CPU: # 2015.10.23 09:54:57 (*)   No license required to generate encrypted Nios II/e.
+Info: NIOS_CPU: # 2015.10.23 09:54:57 (*)   Elaborating CPU configuration settings
+Info: NIOS_CPU: # 2015.10.23 09:54:57 (*)   Creating all objects for CPU
+Info: NIOS_CPU: # 2015.10.23 09:54:59 (*)   Generating RTL from CPU objects
+Info: NIOS_CPU: # 2015.10.23 09:54:59 (*)   Creating plain-text RTL
+Info: NIOS_CPU: # 2015.10.23 09:55:01 (*) Done Nios II generation
+Info: NIOS_CPU: Done RTL generation for module 'NIOS_SYSTEMV3_NIOS_CPU'
+Info: NIOS_CPU: "NIOS_SYSTEMV3" instantiated altera_nios2_qsys "NIOS_CPU"
+Info: RAM: Starting RTL generation for module 'NIOS_SYSTEMV3_RAM'
+Info: RAM:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=NIOS_SYSTEMV3_RAM --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0002_RAM_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0002_RAM_gen//NIOS_SYSTEMV3_RAM_component_configuration.pl  --do_build_sim=0  ]
+Info: RAM: Done RTL generation for module 'NIOS_SYSTEMV3_RAM'
+Info: RAM: "NIOS_SYSTEMV3" instantiated altera_avalon_onchip_memory2 "RAM"
+Info: JTAG_UART: Starting RTL generation for module 'NIOS_SYSTEMV3_JTAG_UART'
+Info: JTAG_UART:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=NIOS_SYSTEMV3_JTAG_UART --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0003_JTAG_UART_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0003_JTAG_UART_gen//NIOS_SYSTEMV3_JTAG_UART_component_configuration.pl  --do_build_sim=0  ]
+Info: JTAG_UART: Done RTL generation for module 'NIOS_SYSTEMV3_JTAG_UART'
+Info: JTAG_UART: "NIOS_SYSTEMV3" instantiated altera_avalon_jtag_uart "JTAG_UART"
+Info: LCD: Starting RTL generation for module 'NIOS_SYSTEMV3_LCD'
+Info: LCD:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_lcd_16207 -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_lcd_16207/generate_rtl.pl --name=NIOS_SYSTEMV3_LCD --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0004_LCD_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0004_LCD_gen//NIOS_SYSTEMV3_LCD_component_configuration.pl  --do_build_sim=0  ]
+Info: LCD: Done RTL generation for module 'NIOS_SYSTEMV3_LCD'
+Info: LCD: "NIOS_SYSTEMV3" instantiated altera_avalon_lcd_16207 "LCD"
+Info: ADC_ON: Starting RTL generation for module 'NIOS_SYSTEMV3_ADC_ON'
+Info: ADC_ON:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_SYSTEMV3_ADC_ON --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0005_ADC_ON_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0005_ADC_ON_gen//NIOS_SYSTEMV3_ADC_ON_component_configuration.pl  --do_build_sim=0  ]
+Info: ADC_ON: Done RTL generation for module 'NIOS_SYSTEMV3_ADC_ON'
+Info: ADC_ON: "NIOS_SYSTEMV3" instantiated altera_avalon_pio "ADC_ON"
+Info: FIFO_ADC_DATA: Starting RTL generation for module 'NIOS_SYSTEMV3_FIFO_ADC_DATA'
+Info: FIFO_ADC_DATA:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_SYSTEMV3_FIFO_ADC_DATA --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0006_FIFO_ADC_DATA_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0006_FIFO_ADC_DATA_gen//NIOS_SYSTEMV3_FIFO_ADC_DATA_component_configuration.pl  --do_build_sim=0  ]
+Info: FIFO_ADC_DATA: Done RTL generation for module 'NIOS_SYSTEMV3_FIFO_ADC_DATA'
+Info: FIFO_ADC_DATA: "NIOS_SYSTEMV3" instantiated altera_avalon_pio "FIFO_ADC_DATA"
+Info: MENU: Starting RTL generation for module 'NIOS_SYSTEMV3_MENU'
+Info: MENU:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_SYSTEMV3_MENU --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0007_MENU_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0007_MENU_gen//NIOS_SYSTEMV3_MENU_component_configuration.pl  --do_build_sim=0  ]
+Info: MENU: Done RTL generation for module 'NIOS_SYSTEMV3_MENU'
+Info: MENU: "NIOS_SYSTEMV3" instantiated altera_avalon_pio "MENU"
+Info: MENU_DOWN: Starting RTL generation for module 'NIOS_SYSTEMV3_MENU_DOWN'
+Info: MENU_DOWN:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_SYSTEMV3_MENU_DOWN --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0008_MENU_DOWN_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0008_MENU_DOWN_gen//NIOS_SYSTEMV3_MENU_DOWN_component_configuration.pl  --do_build_sim=0  ]
+Info: MENU_DOWN: Done RTL generation for module 'NIOS_SYSTEMV3_MENU_DOWN'
+Info: MENU_DOWN: "NIOS_SYSTEMV3" instantiated altera_avalon_pio "MENU_DOWN"
+Info: CH0_THRESH: Starting RTL generation for module 'NIOS_SYSTEMV3_CH0_THRESH'
+Info: CH0_THRESH:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_SYSTEMV3_CH0_THRESH --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0009_CH0_THRESH_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0009_CH0_THRESH_gen//NIOS_SYSTEMV3_CH0_THRESH_component_configuration.pl  --do_build_sim=0  ]
+Info: CH0_THRESH: Done RTL generation for module 'NIOS_SYSTEMV3_CH0_THRESH'
+Info: CH0_THRESH: "NIOS_SYSTEMV3" instantiated altera_avalon_pio "CH0_THRESH"
+Info: CH0_YN1_U: Starting RTL generation for module 'NIOS_SYSTEMV3_CH0_YN1_U'
+Info: CH0_YN1_U:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_SYSTEMV3_CH0_YN1_U --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0010_CH0_YN1_U_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0010_CH0_YN1_U_gen//NIOS_SYSTEMV3_CH0_YN1_U_component_configuration.pl  --do_build_sim=0  ]
+Info: CH0_YN1_U: Done RTL generation for module 'NIOS_SYSTEMV3_CH0_YN1_U'
+Info: CH0_YN1_U: "NIOS_SYSTEMV3" instantiated altera_avalon_pio "CH0_YN1_U"
+Info: CH0_YN1_MU: Starting RTL generation for module 'NIOS_SYSTEMV3_CH0_YN1_MU'
+Info: CH0_YN1_MU:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_SYSTEMV3_CH0_YN1_MU --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0011_CH0_YN1_MU_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6730_5603887163725924635.dir/0011_CH0_YN1_MU_gen//NIOS_SYSTEMV3_CH0_YN1_MU_component_configuration.pl  --do_build_sim=0  ]
+Info: CH0_YN1_MU: Done RTL generation for module 'NIOS_SYSTEMV3_CH0_YN1_MU'
+Info: CH0_YN1_MU: "NIOS_SYSTEMV3" instantiated altera_avalon_pio "CH0_YN1_MU"
+Info: pipeline_bridge_swap_transform: After transform: 5 modules, 10 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_translator_transform: After transform: 5 modules, 10 connections
+Info: SSRAM: "NIOS_SYSTEMV3" instantiated altera_generic_tristate_controller "SSRAM"
+Info: pipeline_bridge_swap_transform: After transform: 4 modules, 7 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: merlin_translator_transform: After transform: 4 modules, 7 connections
+Info: tristate_bridge_ssram_pinSharer: "NIOS_SYSTEMV3" instantiated altera_tristate_conduit_pin_sharer "tristate_bridge_ssram_pinSharer"
+Info: tristate_bridge_ssram: "NIOS_SYSTEMV3" instantiated altera_tristate_conduit_bridge "tristate_bridge_ssram"
+Info: NIOS_CPU_instruction_master_translator: "NIOS_SYSTEMV3" instantiated altera_merlin_master_translator "NIOS_CPU_instruction_master_translator"
+Info: NIOS_CPU_jtag_debug_module_translator: "NIOS_SYSTEMV3" instantiated altera_merlin_slave_translator "NIOS_CPU_jtag_debug_module_translator"
+Info: NIOS_CPU_instruction_master_translator_avalon_universal_master_0_agent: "NIOS_SYSTEMV3" instantiated altera_merlin_master_agent "NIOS_CPU_instruction_master_translator_avalon_universal_master_0_agent"
+Info: NIOS_CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent: "NIOS_SYSTEMV3" instantiated altera_merlin_slave_agent "NIOS_CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: NIOS_CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "NIOS_SYSTEMV3" instantiated altera_avalon_sc_fifo "NIOS_CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "NIOS_SYSTEMV3" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "NIOS_SYSTEMV3" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "NIOS_SYSTEMV3" instantiated altera_merlin_router "id_router"
+Info: id_router_003: "NIOS_SYSTEMV3" instantiated altera_merlin_router "id_router_003"
+Info: rst_controller: "NIOS_SYSTEMV3" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "NIOS_SYSTEMV3" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "NIOS_SYSTEMV3" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "NIOS_SYSTEMV3" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "NIOS_SYSTEMV3" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_003: "NIOS_SYSTEMV3" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_003"
+Info: rsp_xbar_mux: "NIOS_SYSTEMV3" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "NIOS_SYSTEMV3" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file C:/Users/MrBigBear/Desktop/SYSTEMV3/NIOS_SYSTEMV3/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: irq_mapper: "NIOS_SYSTEMV3" instantiated altera_irq_mapper "irq_mapper"
+Info: tdt: "SSRAM" instantiated altera_tristate_controller_translator "tdt"
+Info: tda: "SSRAM" instantiated altera_tristate_controller_aggregator "tda"
+Info: pin_sharer: "tristate_bridge_ssram_pinSharer" instantiated altera_tristate_conduit_pin_sharer_core "pin_sharer"
+Info: arbiter: "tristate_bridge_ssram_pinSharer" instantiated altera_merlin_std_arbitrator "arbiter"
+Info: NIOS_SYSTEMV3: Done NIOS_SYSTEMV3" with 37 modules, 735 files, 15029160 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

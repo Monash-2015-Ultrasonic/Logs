@@ -1,0 +1,273 @@
+#define THRESHOLD 			19
+
+#include <unistd.h>
+
+#include "system.h"
+#include "io.h"
+
+#include "config.h"
+#include "LCD.h"
+
+volatile int *data = 				(int *) FIFO_ADC_DATA_BASE;
+volatile int *data_valid = 			(int *) FIFO_ADC_DATA_VALID_BASE;
+
+volatile int *fifo_rst =			(int *) FIFO_RST_BASE;
+
+volatile int *sub_on =				(int *) SUBTRACTOR_ON_BASE;
+volatile int *det_on =				(int *) DETECTOR_ON_BASE;
+volatile int *adc_on =				(int *) ADC_ON_BASE;
+
+volatile int *menu =				(int *) MENU_BASE;
+volatile int *menuUP =				(int *) MENU_UP_BASE;
+volatile int *menuDOWN =			(int *) MENU_DOWN_BASE;
+
+volatile int *CH0_threshold = 		(int *)	CH0_THRESH_BASE;
+volatile int *timer_CH0_rst = 		(int *) TIMER_CH0_RST_BASE;
+volatile int *CH0_detect = 			(int *) CH0_DETECTION_TRUE_BASE;
+volatile int *CH0_time = 			(int *) CH0_TIME_BASE;
+
+alt_8 threshold = THRESHOLD;
+alt_32 sumHsq_CH0 = 4370800;
+alt_64 thresholdMultiplier;
+
+runMode systemMode = oneD;
+
+int i;
+
+void init_ADC(void)
+{
+	// Initialise ADC:
+	LCD_Display("ADC     000/100", 2);
+
+	*fifo_rst = 0x1;
+	*adc_on = 0x1;
+
+	char temp1[16] = {"ADC     000/100"};
+	for (i = 0; i < 100; i++) {
+		temp1[8]  = (((i+1)/100)%10) 	+ 0x30;
+		temp1[9] = (((i+1)/10)%10) 		+ 0x30;
+		temp1[10] = ((i+1)%10) 			+ 0x30;
+		LCD_Display(temp1, 2);
+
+		usleep(50);
+	}
+
+	*adc_on = 0x0;
+	*fifo_rst = 0x0;
+}
+
+void init_FIR(void)
+{
+	// Initialise FIR Filter:
+	LCD_Display("FIR     000/256", 2);
+
+	char temp2[16] = {"FIR     000/256"};
+	for (i = 0; i < 256; i++) {
+		*data 		= 0x0000;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		temp2[8] = (((i+1)/100)%10) 	+ 0x30;
+		temp2[9] = (((i+1)/10)%10) 		+ 0x30;
+		temp2[10]=  ((i+1)%10) 			+ 0x30;
+		LCD_Display(temp2, 2);
+
+		usleep(50);
+	}
+}
+void init_FIFO(void)
+{
+	// Initialise FIFOs:
+	LCD_Display("FIFOs   000/100", 2);
+
+	*fifo_rst = 0x1;
+	usleep(100);
+	*fifo_rst = 0x0;
+
+	char temp3[16] = {"FIFOs   000/100"};
+	for (i = 0; i < 100; i++) {
+		*data 		= 0x0000;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		temp3[8] = (((i+1)/100)%10) 	+ 0x30;
+		temp3[9] = (((i+1)/10)%10) 		+ 0x30;
+		temp3[10]=  ((i+1)%10) 			+ 0x30;
+		LCD_Display(temp3, 2);
+
+		usleep(50);
+	}
+}
+void init_TIMER(void)
+{
+	*timer_CH0_rst = 0x1;
+	usleep(0.1 seconds);
+	*timer_CH0_rst = 0x0;
+}
+void init_DETECTOR(void)
+{
+	//thresholdMultiplier = threshold * sumHsq_CH0 / 100;
+	//thresholdMultiplier = thresholdMultiplier * threshold / 100;
+	thresholdMultiplier = sumHsq_CH0 * threshold / 100;
+	*CH0_threshold	= thresholdMultiplier;
+}
+
+void init_SYSTEM(initMode initOption)
+{
+	// Set ADC, ADC FIFO & FIR OFF:
+		*fifo_rst 		= 0x0;
+		*data_valid 	= 0x0;
+		*adc_on 		= 0x0;
+		*sub_on			= 0x0;
+		*det_on  		= 0x0;
+		*CH0_threshold 	= 0xFFFFFFFF;
+		*timer_CH0_rst 	= 0x1;
+
+		if (initOption == BOOT) {
+		// Start LCD:
+			LCD_Init();
+			LCD_Display("Ultrasonic Array", 1);
+			LCD_Display("Sensor - IH CA", 2);
+
+			usleep(1000000);
+
+			LCD_Display("Initialise:     ", 1);
+
+			init_ADC();
+			usleep(0.5 seconds);
+
+			// Check to make sure that ADC is functioning:
+			//*adc_on = 0x1;
+			//usleep(20);
+			//*adc_on = 0x0;
+		} else {
+			LCD_Display("Applying        ", 1);
+			LCD_Display("       Settings", 2);
+			usleep(0.5 seconds);
+
+			LCD_Display("Flushing:      ", 1);
+		}
+
+		init_FIR();
+		usleep(0.5 seconds);
+
+		init_FIFO();
+		init_TIMER();
+		init_DETECTOR();
+
+		*fifo_rst = 0x1;
+		usleep(0.1 seconds);
+		*fifo_rst = 0x0;
+
+		*det_on = 0x1;
+
+		usleep(1 seconds);
+
+		// SYSTEM READY TO RUN:
+		char line1[16] = {" D   R:      cm"};
+		switch (systemMode) {
+			case oneD:
+				line1[0] = 1 + 0x30;
+				break;
+			case twoD:
+				line1[0] = 2 + 0x30;
+				break;
+			case threeD:
+				line1[0] = 3 + 0x30;
+				break;
+			default:
+				line1[0] = 1 + 0x30;
+				break;
+		}
+		LCD_Display(line1, 1);
+
+		char line2[16] = {"   % T:NA  P:NA "};
+		line2[0] = (((threshold+1)/100)%10) 	+ 0x30;
+		line2[1] = (((threshold+1)/10)%10) 		+ 0x30;
+		line2[2] = ((threshold+1)%10) 			+ 0x30;
+		LCD_Display(line2, 2);
+}
+
+void start_SYSTEM(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+
+	*sub_on		= 0x1;
+	usleep(0.1 seconds);
+	*adc_on		= 0x1;
+	*det_on		= 0x1;
+}
+
+void display_mode(void)
+{
+	char line1[16] = {"MENU:          "};
+	char line2[16] = {"Mode:  -D      "};
+
+	switch (systemMode) {
+		case oneD:
+			line2[6] = 1 + 0x30;
+			break;
+		case twoD:
+			line2[6] = 2 + 0x30;
+			break;
+		case threeD:
+			line2[6] = 1 + 0x30;
+			break;
+		default:
+			line2[6] = 1 + 0x30;
+			break;
+	}
+
+	LCD_Display(line1, 1);
+	LCD_Display(line2, 2);
+}
+
+void menu_SYSTEM(void)
+{
+	int run = IORD(MENU_BASE, 0);
+	while (run) {
+		int foundMenu = IORD(MENU_BASE, 0);
+		int foundMenuUp = IORD(MENU_UP_BASE, 0);
+		int foundMenuDown = IORD(MENU_DOWN_BASE, 0);
+
+		if (foundMenu) {
+			run = 0;
+			// exit
+		} else if (foundMenuUp) {
+			switch (systemMode) {
+				case oneD:
+					systemMode = twoD;
+					break;
+				case twoD:
+					systemMode = threeD;
+					break;
+				case threeD:
+				default:
+					break;
+			}
+		} else if (foundMenuDown) {
+			switch (systemMode) {
+				case twoD:
+					systemMode = oneD;
+					break;
+				case threeD:
+					systemMode = twoD;
+					break;
+				case oneD:
+				default:
+					break;
+			}
+		} else {
+			run = IORD(MENU_BASE, 0) ? 0 : 1;
+		}
+		display_mode();
+		usleep(0.001 seconds);
+
+		if (!run) init_SYSTEM(RECONFIGURE);
+	}
+
+
+}
+
+

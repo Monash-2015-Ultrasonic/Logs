@@ -1,0 +1,24 @@
+set_global_assignment -entity "FIR" -library "FIR" -name IP_TOOL_NAME "altera_fir_compiler_ii"
+set_global_assignment -entity "FIR" -library "FIR" -name IP_TOOL_VERSION "13.0sp1"
+set_global_assignment -entity "FIR" -library "FIR" -name IP_TOOL_ENV "mwpim"
+set_global_assignment -library "FIR" -name MISC_FILE [file join $::quartus(qip_path) "FIR.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+
+set_global_assignment -library "FIR" -name VERILOG_FILE [file join $::quartus(qip_path) "FIR.v"]
+set_global_assignment -library "FIR" -name VERILOG_FILE [file join $::quartus(qip_path) "FIR/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/auk_dspip_math_pkg_hpfir.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/auk_dspip_lib_pkg_hpfir.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/auk_dspip_avalon_streaming_controller_hpfir.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/auk_dspip_avalon_streaming_sink_hpfir.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/auk_dspip_avalon_streaming_source_hpfir.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/auk_dspip_roundsat_hpfir.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/dspba_library_package.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/dspba_library.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/FIR_0002_rtl.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/FIR_0002_ast.vhd"]
+set_global_assignment -library "FIR" -name VHDL_FILE [file join $::quartus(qip_path) "FIR/FIR_0002.vhd"]
+set_global_assignment -library "FIR" -name SDC_FILE [file join $::quartus(qip_path) "FIR/FIR_0002.sdc"]
+
+set_global_assignment -entity "FIR_0002" -library "FIR" -name IP_TOOL_NAME "altera_fir_compiler_ii"
+set_global_assignment -entity "FIR_0002" -library "FIR" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "FIR_0002" -library "FIR" -name IP_TOOL_ENV "mwpim"

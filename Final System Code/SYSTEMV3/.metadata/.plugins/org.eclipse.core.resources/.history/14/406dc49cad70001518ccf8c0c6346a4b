@@ -1,0 +1,22 @@
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
+
+typedef enum Modes {MANUAL, ADC} impulseMode;
+
+int threshold;
+
+void init_SYSTEM(void);
+
+void ADC_test(void);
+void FIFO_ADC_test(void);
+void SUBTRACTOR_test(void);
+void impulse_test(impulseMode mode);
+void MULTIPLIER_test(void);
+void sumXsq_test(void);
+void TIMER_test(void);
+void DETECTION_test(void);
+
+void START(void);
+
+#endif
+

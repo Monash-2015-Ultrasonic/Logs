@@ -1,0 +1,289 @@
+#include <unistd.h>
+
+#include "main.h"
+#include "functions.h"
+#include "LCD.h"
+
+int i;
+
+int threshold = 75;
+
+void init_SYSTEM(void)
+{
+	// Set ADC, ADC FIFO & FIR OFF:
+		*fifo_rst 	= 0x0;
+		*data_valid = 0x0;
+		*adc_on 	= 0x0;
+		*sub_on		= 0x0;
+		*threshA 	= 0x0;
+		*sumHsqCH0  = 0xFFFFFF;
+		*timer_CH0_rst = 0x1;
+
+		// Start LCD:
+		LCD_Init();
+		LCD_Display("Ultrasonic Array", 1);
+		LCD_Display("Sensor - IH CA", 2);
+
+		usleep(1000000);
+
+		LCD_Display("Initialise:     ", 1);
+
+		// Initialise ADC:
+		LCD_Display("ADC     000/100", 2);
+
+		*fifo_rst = 0x1;
+		*adc_on = 0x1;
+
+		char temp1[16] = {"ADC     000/100"};
+		for (i = 0; i < 100; i++) {
+			temp1[8]  = (((i+1)/100)%10) 	+ 0x30;
+			temp1[9] = (((i+1)/10)%10) 		+ 0x30;
+			temp1[10] = ((i+1)%10) 			+ 0x30;
+			LCD_Display(temp1, 2);
+
+			usleep(50);
+		}
+
+		*adc_on = 0x0;
+		*fifo_rst = 0x0;
+
+		// Check to make sure that ADC is functioning:
+		//*adc_on = 0x1;
+		//usleep(20);
+		//*adc_on = 0x0;
+
+		usleep(500000);
+
+		// Initialise FIR Filter:
+		LCD_Display("FIR     000/256", 2);
+
+		char temp2[16] = {"FIR     000/256"};
+		for (i = 0; i < 256; i++) {
+			*data 		= 0x0000;
+			*data_valid = 0x1;
+			*data_valid = 0x0;
+
+			temp2[8] = (((i+1)/100)%10) 	+ 0x30;
+			temp2[9] = (((i+1)/10)%10) 		+ 0x30;
+			temp2[10]=  ((i+1)%10) 			+ 0x30;
+			LCD_Display(temp2, 2);
+
+			usleep(50);
+		}
+
+		//usleep(1000000);
+		usleep(500000);
+
+		// Initialise FIFOs:
+		LCD_Display("FIFOs   000/100", 2);
+
+		*fifo_rst = 0x1;
+		usleep(100);
+		*fifo_rst = 0x0;
+
+		char temp3[16] = {"FIFOs   000/100"};
+		for (i = 0; i < 100; i++) {
+			*data 		= 0x0000;
+			*data_valid = 0x1;
+			*data_valid = 0x0;
+
+			temp3[8] = (((i+1)/100)%10) 	+ 0x30;
+			temp3[9] = (((i+1)/10)%10) 		+ 0x30;
+			temp3[10]=  ((i+1)%10) 			+ 0x30;
+			LCD_Display(temp3, 2);
+
+			usleep(50);
+		}
+
+		*fifo_rst = 0x1;
+		usleep(100);
+		*fifo_rst = 0x0;
+
+		*timer_CH0_rst = 0x1;
+		usleep(100);
+		*timer_CH0_rst = 0x0;
+
+		*threshA 	= threshold;
+		usleep(100);
+		*sumHsqCH0 	= 0x42B170;
+
+		usleep(1000000);
+}
+
+void ADC_test(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+	*adc_on 	= 0x0;
+	*sub_on		= 0x0;
+
+	*adc_on 	= 0x1;
+	usleep(1000);
+	*adc_on 	= 0x0;
+
+	while (1) {
+
+	}
+}
+
+void FIFO_ADC_test(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+	*adc_on 	= 0x0;
+	*sub_on		= 0x0;
+
+	for (i = 0; i < 15; i++) {
+		*data = i+1;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		usleep(1000000);
+	}
+}
+
+void SUBTRACTOR_test(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+	*adc_on 	= 0x0;
+
+	*sub_on = 0x1;
+	usleep(1000000);
+
+	for (i = 3; i < 15; i++) {
+		*data = i+1;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		usleep(1000000);
+	}
+
+	*sub_on = 0x0;
+}
+
+void impulse_test(impulseMode mode)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+	*adc_on 	= 0x0;
+	*sub_on		= 0x0;
+
+	*sub_on 	= 0x1;
+
+	//*data 		= *sub_on ? 0x1 + SUBTRACTOR_OFFSET : 0x1;
+	*data = 0x0;
+	*data_valid	= 0x1;
+	*data_valid = 0x0;
+
+	//usleep(125000);
+	usleep(10000000);
+
+	if (mode == ADC) {
+		*adc_on = 0x1;
+		//usleep(470);
+		usleep(10000000);
+		*adc_on = 0x0;
+	}
+
+	for (i = 0; i < 128; i++) {
+		*data 		= *sub_on ? 0x0 + SUBTRACTOR_OFFSET : 0x0;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+		//usleep(0.1 seconds);
+		usleep(1 seconds);
+	}
+}
+
+void MULTIPLIER_test(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+	*adc_on 	= 0x0;
+
+	*sub_on = 0x1;
+	usleep(1000000);
+
+	for (i = 4; i < 15; i++) {
+		*data = i+1;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		usleep(1000000);
+	}
+
+	*sub_on = 0x0;
+
+}
+
+void sumXsq_test(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+	*adc_on 	= 0x0;
+	*sub_on 	= 0x0;
+
+	for (i = 0; i < 128; i++) {
+		//*data 		= i+1;
+		*data 		= i+1+10;
+		*data_valid	= 0x1;
+		*data_valid = 0x0;
+
+		usleep(1000000);
+		//usleep(3000000);
+	}
+}
+
+void TIMER_test(void)
+{
+	*adc_on = 0x1;
+	usleep(100);
+	*adc_on = 0x0;
+	usleep(3000000);
+	*timer_CH0_rst = 0x1;
+	usleep(100);
+	*timer_CH0_rst = 0x0;
+	usleep(3000000);
+}
+
+void SYSTEM_test(void)
+{
+	*fifo_rst 	= 0x0;
+	*data_valid = 0x0;
+	*adc_on 	= 0x0;
+	*sub_on		= 0x0;
+
+	//int coeffs[128] = {495, 361, -54, -432, -480, -160, 287, 510, 339, -95, -457, -471, -127, 315, 510, 313, -124, -465, -451, -95, 326, 491, 280, -141, -453, -417, -67, 321, 455, 242, -150, -423, -368, -40, 302, 402, 195, -152, -374, -305, -13, 269, 333, 143, -145, -311, -233, 11, 227, 254, 87, -136, -240, -154, 37, 180, 169, 28, -122, -165, -76, 58, 128, 87, -20, -102, -95, -12, 68, 82, 23, -54, -83, -40, 34, 73, 44, -25, -76, -63, 1, 61, 66, 15, -49, -77, -46, 17, 63, 56, 6, -48, -68, -40, 14, 52, 48, 9, -36, -57, -37, 5, 38, 39, 11, -24, -42, -29, 0, 20, 22, 8, -10};
+	int coeffs[128] = {3, 9, 9, 11, -31, -49, -32, 15, 80, 83, 34, -77, -116, -103, 49, 137, 129, 38, -128, -180, -142, 86, 211, 193, 38, -196, -261, -211, 116, 295, 263, 24, -260, -332, -240, 160, 364, 318, 31, -322, -404, -248, 205, 423, 362, 23, -372, -457, -260, 235, 462, 392, 6, -406, -480, -279, 263, 505, 403, -47, -428, -487, -238, 296, 511};
+
+	*sub_on 	= 0x1;
+	usleep(1 seconds);
+/*
+	for (i = 0; i < 65; i++) {
+		//*data = coeffs[i] + SUBTRACTOR_OFFSET;
+		*data 		= 0x1 + SUBTRACTOR_OFFSET;
+		//*data 		= -1 + SUBTRACTOR_OFFSET;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		//usleep(0.1 seconds);
+		usleep(1 seconds);
+	}
+
+	usleep(10 seconds);
+	*/
+
+	*data = *sub_on ? 0x1 + SUBTRACTOR_OFFSET : 0x1;
+	*data_valid = 0x1;
+	*data_valid = 0x0;
+	usleep(1 seconds);
+
+	for (i = 0; i < 128; i++) {
+		*data 		= *sub_on ? 0x0 + SUBTRACTOR_OFFSET : 0x0;
+		*data_valid = 0x1;
+		*data_valid = 0x0;
+
+		//usleep(0.1 seconds);
+		usleep(1 seconds);
+	}
+}

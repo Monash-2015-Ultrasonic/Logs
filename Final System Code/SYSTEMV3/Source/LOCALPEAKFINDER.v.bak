@@ -1,0 +1,45 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// LOCAL PEAK FINDER - Quadratic Interpolation performed on NIOS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	
+	// Peak is when Yn2 > Yn1, & Yn2 > Yn3:
+	// Order of point: n1 -> n2 -> n3
+	wire TRUE_PEAK, TRUE_PEAK_Yn2_Yn1, TRUE_PEAK_Yn2_Yn3;
+		assign TRUE_PEAK_Yn2_Yn1 	= ( (Shift1Ynum*Shift0Yden) > (Shift1Yden*Shift0Ynum) );
+		assign TRUE_PEAK_Yn2_Yn3 	= ( (Shift1Ynum*Shift2Yden) > (Shift1Yden*Shift2Ynum) );
+		assign TRUE_PEAK 				= TRUE_PEAK_Yn2_Yn1 & TRUE_PEAK_Yn2_Yn3;
+	
+	// Manually written Shift Register:
+	// CLK 		= SYS_CLK
+	// CLK_EN 	= FIFO_ADC_RD 
+	// [-->Shift2][Shift1][Shift0-->]
+	//      Yn1      Yn2      Yn3
+	reg [59:0] Shift2Ynum, Shift1Ynum, Shift0Ynum;
+	reg [49:0] Shift2Yden, Shift1Yden, Shift0Yden;
+	always @(posedge SYS_CLK) begin
+		if (RST) begin
+			Shift2Ynum 		<= 0;
+			Shift2Yden 		<= 0;
+			
+			Shift1Ynum 		<= 0;
+			Shift1Yden 		<= 0;
+			
+			Shift0Ynum 		<= 0;
+			Shift0Yden 		<= 0;
+			
+			TIME				<= 0;
+		end
+		else begin
+			Shift2Ynum 		<= FIFO_ADC_RD ? Yn_NUM : Shift2Ynum;
+			Shift2Yden 		<= FIFO_ADC_RD ? Yn_DEN : Shift2Yden;
+			
+			Shift1Ynum 		<= FIFO_ADC_RD ? Shift2Ynum : Shift1Ynum;
+			Shift1Yden 		<= FIFO_ADC_RD ? Shift2Yden : Shift1Yden;
+			
+			Shift0Ynum 		<= FIFO_ADC_RD ? Shift1Ynum : Shift0Ynum;
+			Shift0Yden 		<= FIFO_ADC_RD ? Shift1Yden : Shift0Yden;
+			
+			DETECTION_TRUE <= DETECTION & TRUE_PEAK ? 1 : 0;
+			TIME				<= DETECTION_TRUE ? TIMER : TIME;
+		end
+	end

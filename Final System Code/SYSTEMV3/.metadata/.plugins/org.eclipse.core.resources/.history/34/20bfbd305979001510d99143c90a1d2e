@@ -1,0 +1,68 @@
+/*
+ * FILE: 				main.c
+ * AUTHOR:				Ian HUA
+ * DATE LAST MODIFIED:	9 October 2015
+ *
+ * DESCRIPTION:			LCD Control
+ *
+ *						Write:
+ *						CMD to Register 0 @ Base
+ *						DATA to Register 2 @ Base
+ *
+ *						Read:
+ *						CMD from Register 1 @ Base
+ *						DATA from Register 3 @ Base
+ *
+ */
+
+#include <unistd.h>
+#include <string.h>
+
+#include "system.h"
+#include "io.h"
+
+#include "LCD.h"
+
+// Taken from Terasic DE2-70 Demo CD:
+int LCD_CMD[6] 	= {0x38, 0x0c, 0x01, 0x06, 0x80, 0xc0};
+
+//===============================
+// Initialisation sequence
+//===============================
+void LCD_Init()
+{
+	int i;
+	for (i = 0; i < 4; i++) {
+		IOWR(LCD_BASE, 0, LCD_CMD[i]);
+		usleep(500);
+	}
+}
+
+//===============================
+// LCD Control: Select line to ouptut to
+//===============================
+void LCD_LineSel(int line)
+{
+	switch (line) {
+	case 2:
+		IOWR(LCD_BASE, 0, LCD_CMD[5]);
+		break;
+	case 1:
+	default:
+		IOWR(LCD_BASE, 0, LCD_CMD[4]);
+		break;
+	}
+	usleep(500);
+}
+
+
+void LCD_Display(char* text, int line)
+{
+	LCD_LineSel(line);
+
+	int i;
+	for (i = 0; i < strlen(text); i++) {
+		IOWR(LCD_BASE, 2, text[i]);
+		usleep(100);
+	}
+}

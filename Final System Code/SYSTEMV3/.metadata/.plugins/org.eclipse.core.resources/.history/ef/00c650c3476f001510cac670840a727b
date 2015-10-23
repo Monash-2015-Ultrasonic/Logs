@@ -1,0 +1,56 @@
+#include <unistd.h>
+
+#include "sys/alt_stdio.h"
+#include "alt_types.h"
+#include "system.h"
+#include "io.h"
+
+#include "main.h"
+#include "functions.h"
+#include "LCD.h"
+
+volatile int *data = 				(int *) FIFO_ADC_DATA_BASE;
+volatile int *data_valid = 			(int *) FIFO_ADC_DATA_VALID_BASE;
+
+volatile int *adc_on =				(int *) ADC_ON_BASE;
+
+volatile int *fifo_rst =			(int *) FIFO_RST_BASE;
+
+volatile int *sub_on =				(int *) SUBTRACTOR_ON_BASE;
+
+volatile int *threshA = 			(int *) THRESHA_BASE;
+volatile int *sumHsqCH0 = 			(int *)	SUMHSQ_CHANNEL0_BASE;
+
+int i;
+
+int main()
+{ 
+	// Initialise SYSTEM components:
+	usleep(10000);
+
+	init_SYSTEM();
+
+	// SYSTEM READY TO RUN:
+	char line1[16] = {"1D      R:   cm"};
+	LCD_Display(line1, 1);
+
+	char line2[16] = {"     T:    P:   "};
+	line2[0] = ((threshold/100)%10) 	+ 0x30;
+	line2[1] = ((threshold/10)%10) 		+ 0x30;
+	line2[2] = (threshold%10) 			+ 0x30;
+	LCD_Display(line2, 2);
+
+	while (1) {
+		//ADC_test();				// Verify ADC
+		//FIFO_ADC_test();			// Verify ADC FIFO
+		//SUBTRACTOR_test();		// Verify FIR Input Subtractor
+		//impulse_test(MANUAL); 	// Verify FIR, FIR Impulse Response, FIR FIFO
+		//MULTIPLIER_test(); 		// Verify X_currentSq
+		//sumXsq_test();			// Verify sumXsq, sumXsq FIFO
+		usleep(1000000);
+	}
+
+	return 0;
+}
+
+

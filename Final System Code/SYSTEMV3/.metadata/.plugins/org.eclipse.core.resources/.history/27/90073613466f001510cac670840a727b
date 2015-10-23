@@ -1,0 +1,16 @@
+#ifndef _FUNCTIONS_H_
+#define _FUNCTIONS_H_
+
+typedef enum Modes {MANUAL, ADC} impulseMode;
+
+void init_SYSTEM(void);
+
+void ADC_test(void);
+void FIFO_ADC_test(void);
+void SUBTRACTOR_test(void);
+void impulse_test(impulseMode mode);
+void MULTIPLIER_test(void);
+void sumXsq_test(void);
+
+#endif
+

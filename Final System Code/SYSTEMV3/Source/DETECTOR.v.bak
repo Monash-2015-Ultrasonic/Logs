@@ -1,0 +1,70 @@
+module DETECTOR(
+	input					SYS_CLK,
+	input 				RST,
+	input					ON,			
+
+	input [6:0]			threshA,
+	input	[23:0]		sumHsq,
+	
+	input [29:0]		Y,
+	input [25:0]		sumXsq,
+	
+	output 				DETECTION
+);
+	// Signed Input, Unsigned Output
+	wire [59:0] Ysq;
+	MULT_FIRSQ	MULT_FIRSQ_inst (
+		.dataa 		( Y 						),
+		.result 		( Ysq 					)
+	);
+	
+	
+	
+	
+	// Unsigned Inputs, Unsigned Output
+	wire [13:0] threshAsq;
+	MULTSQ	MULTSQ_inst (
+		.dataa 		( threshA 				),
+		.result 		( threshAsq 			)
+	);
+	
+	// Unsigned Inputs, Unsigned Output
+	wire [37:0] HthreshA;
+	MULT_THRESH	MULT_THRESH_inst (
+		.dataa 		( threshAsq				),
+		.datab		( sumHsq					),
+		.result 		( HthreshA 				)
+	);
+	
+	// Unsigned Input, Unsigned Output
+	wire [37:0] constant;
+	DIV_THRESH	DIV_THRESH_inst (
+		.numer 		( HthreshA 				),
+		.denom 		( 14'h2710 				),
+		.quotient 	( constant 				),
+		.remain 		( )
+	);
+	
+	// Unsigned Inputs, Unsigned Output
+	wire [63:0] thresholdedSumXSq;
+	MULT_SUMXSQ	MULT_SUMXSQ_inst (
+		.dataa 		( sumXsq			 		),
+		.datab 		( constant 				),
+		.result 		( thresholdedSumXSq 	)
+	);
+	
+	
+	
+	
+	// Unsigned Inputs
+	wire thresholdTest;
+	COMPARE	COMPARE_inst (
+		.dataa 		( Ysq						),
+		.datab 		( thresholdedSumXSq  ),
+		.agb			( thresholdTest 		)		// Need to use > not >= to avoid problems of 0 = 0 @ system RST
+	);	
+	
+	// Detection: Not negative input & threshold exceeded
+	assign DETECTION = ~RST & ON & ~Y[29] & thresholdTest ? 1 : 0;
+	
+endmodule

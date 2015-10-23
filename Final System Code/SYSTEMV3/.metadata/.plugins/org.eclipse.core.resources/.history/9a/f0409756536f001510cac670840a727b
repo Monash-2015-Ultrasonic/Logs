@@ -1,0 +1,20 @@
+#ifndef _MAIN_H_
+#define _MAIN_H_
+
+#define seconds *100000
+
+volatile int *data;
+volatile int *data_valid;
+
+volatile int *adc_on;
+
+volatile int *fifo_rst;
+
+volatile int *sub_on;
+
+volatile int *threshA;
+volatile int *sumHsqCH0;
+
+volatile int *timer_CH0_rst
+
+#endif

@@ -1,0 +1,25 @@
+#include "alt_types.h"
+
+#ifndef _RUNTIMEFUNCTIONS_H_
+#define _RUNTIMEFUNCTIONS_H_
+
+int distance;
+alt_u64 CH0_nOut, CH1_nOut, CH2_nOut, CH3_nOut;
+
+alt_u64 qInterp(int precision, int n1, alt_u64 Yn1num, alt_u64 Yn1den, alt_u64 Yn2num, alt_u64 Yn2den, alt_u64 Yn3num, alt_u64 Yn3den);
+void sampleChannels(void);
+void Display_Results(int mode, float R, float phi, float theta);
+
+
+int calc_mode;
+/* Function declarations */
+void find_constants();
+void find_coordinates(float *L, int N, int mode, float *R, float *phi, float *theta);
+void convert_results(float *R, float *phi, float *theta);
+void find_denominator(int *k_valid, int n, int mode, float (*MTptr)[3][5], float (*MTMptr)[3][3], float *detMTMptr);
+float determinant(float M[3][3], int n);
+void transpose(float M[5][3], float (*MTptr)[3][5], int m, int n);
+void matrix_multiply(float B[3][5], int m, int n, float C[5][3], int p, float (*BCptr)[3][3]);
+int float2int(float r);
+
+#endif

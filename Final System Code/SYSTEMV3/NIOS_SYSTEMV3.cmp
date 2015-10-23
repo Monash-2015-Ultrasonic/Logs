@@ -1,0 +1,113 @@
+	component NIOS_SYSTEMV3 is
+		port (
+			clk_clk                                           : in    std_logic                     := 'X';             -- clk
+			reset_reset_n                                     : in    std_logic                     := 'X';             -- reset_n
+			lcd_RS                                            : out   std_logic;                                        -- RS
+			lcd_RW                                            : out   std_logic;                                        -- RW
+			lcd_data                                          : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+			lcd_E                                             : out   std_logic;                                        -- E
+			adc_on_export                                     : out   std_logic;                                        -- export
+			fifo_adc_data_export                              : out   std_logic_vector(15 downto 0);                    -- export
+			fifo_adc_data_valid_export                        : out   std_logic;                                        -- export
+			fifo_rst_export                                   : out   std_logic;                                        -- export
+			subtractor_on_export                              : out   std_logic;                                        -- export
+			ch0_timer_rst_export                              : out   std_logic;                                        -- export
+			detector_on_export                                : out   std_logic;                                        -- export
+			menu_export                                       : in    std_logic                     := 'X';             -- export
+			menu_up_export                                    : in    std_logic                     := 'X';             -- export
+			menu_down_export                                  : in    std_logic                     := 'X';             -- export
+			ch0_thresh_export                                 : out   std_logic_vector(23 downto 0);                    -- export
+			ch0_rd_peak_export                                : out   std_logic;                                        -- export
+			ch0_peak_found_export                             : in    std_logic                     := 'X';             -- export
+			ch0_yn1_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch0_yn1_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_yn1_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_yn1_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_time_export                                   : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch0_yn2_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_yn2_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_yn2_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_yn2_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch0_yn3_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch0_yn3_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_yn3_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch0_yn3_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_timer_rst_export                              : out   std_logic;                                        -- export
+			ch1_thresh_export                                 : out   std_logic_vector(23 downto 0);                    -- export
+			ch1_rd_peak_export                                : out   std_logic;                                        -- export
+			ch1_peak_found_export                             : in    std_logic                     := 'X';             -- export
+			ch1_time_export                                   : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch1_yn1_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch1_yn1_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn1_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn1_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn2_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch1_yn2_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn2_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn2_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn3_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch1_yn3_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn3_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch1_yn3_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_timer_rst_export                              : out   std_logic;                                        -- export
+			ch2_thresh_export                                 : out   std_logic_vector(23 downto 0);                    -- export
+			ch2_rd_peak_export                                : out   std_logic;                                        -- export
+			ch2_peak_found_export                             : in    std_logic                     := 'X';             -- export
+			ch2_time_export                                   : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch2_yn1_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch2_yn1_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn1_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn1_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn2_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch2_yn2_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn2_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn2_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn3_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch2_yn3_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn3_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch2_yn3_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn3_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn3_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn3_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn3_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch3_yn2_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn2_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn2_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn2_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch3_yn1_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn1_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn1_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch3_yn1_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch3_time_export                                   : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch3_timer_rst_export                              : out   std_logic;                                        -- export
+			ch3_thresh_export                                 : out   std_logic_vector(23 downto 0);                    -- export
+			ch3_rd_peak_export                                : out   std_logic;                                        -- export
+			ch3_peak_found_export                             : in    std_logic                     := 'X';             -- export
+			ch4_yn3_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn3_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn3_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn3_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch4_yn2_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn2_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn2_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn2_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch4_yn1_l_export                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn1_ml_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn1_mu_export                                 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			ch4_yn1_u_export                                  : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch4_time_export                                   : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			ch4_peak_found_export                             : in    std_logic                     := 'X';             -- export
+			ch4_timer_rst_export                              : out   std_logic;                                        -- export
+			ch4_thresh_export                                 : out   std_logic_vector(23 downto 0);                    -- export
+			ch4_rd_peak_export                                : out   std_logic;                                        -- export
+			tristate_bridge_ssram_bwe_n_to_the_ssram          : out   std_logic_vector(0 downto 0);                     -- bwe_n_to_the_ssram
+			tristate_bridge_ssram_reset_n_to_the_ssram        : out   std_logic_vector(0 downto 0);                     -- reset_n_to_the_ssram
+			tristate_bridge_ssram_chipenable1_n_to_the_ssram  : out   std_logic_vector(0 downto 0);                     -- chipenable1_n_to_the_ssram
+			tristate_bridge_ssram_bw_n_to_the_ssram           : out   std_logic_vector(3 downto 0);                     -- bw_n_to_the_ssram
+			tristate_bridge_ssram_outputenable_n_to_the_ssram : out   std_logic_vector(0 downto 0);                     -- outputenable_n_to_the_ssram
+			tristate_bridge_ssram_adsc_n_to_the_ssram         : out   std_logic_vector(0 downto 0);                     -- adsc_n_to_the_ssram
+			tristate_bridge_ssram_address_to_the_ssram        : out   std_logic_vector(20 downto 0);                    -- address_to_the_ssram
+			tristate_bridge_ssram_data_to_and_from_the_ssram  : inout std_logic_vector(31 downto 0) := (others => 'X')  -- data_to_and_from_the_ssram
+		);
+	end component NIOS_SYSTEMV3;
+

@@ -1,0 +1,32 @@
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
+
+#define THRESHOLD 			79;
+
+#define seconds 			*1000000
+#define SUBTRACTOR_OFFSET 	0x7FF
+
+volatile int *data;
+volatile int *data_valid;
+
+volatile int *fifo_rst;
+
+volatile int *sub_on;
+volatile int *det_on;
+volatile int *adc_on;
+
+volatile int *threshA;
+
+volatile int *sumHsqCH0;
+volatile int *timer_CH0_rst;
+volatile int *CH0_detect;
+volatile int *CH0_time;
+
+int threshold;
+
+void init_SYSTEM(void);
+void start_SYSTEM(void);
+void menu_SYSTEM(void);
+
+#endif
+

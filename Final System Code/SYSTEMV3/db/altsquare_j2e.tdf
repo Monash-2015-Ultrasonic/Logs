@@ -1,0 +1,274 @@
+--altsquare CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DATA_WIDTH=13 DEVICE_FAMILY="Cyclone II" PIPELINE=0 REPRESENTATION="SIGNED" RESULT_WIDTH=26 data result
+--VERSION_BEGIN 13.0 cbx_altsquare 2013:06:12:18:03:43:SJ cbx_cycloneii 2013:06:12:18:03:43:SJ cbx_lpm_add_sub 2013:06:12:18:03:43:SJ cbx_mgl 2013:06:12:18:05:10:SJ cbx_padd 2013:06:12:18:03:43:SJ cbx_stratix 2013:06:12:18:03:43:SJ cbx_stratixii 2013:06:12:18:03:43:SJ cbx_util_mgl 2013:06:12:18:03:43:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION soft (in)
+RETURNS ( out);
+
+--synthesis_resources = lut 87 
+SUBDESIGN altsquare_j2e
+( 
+	data[12..0]	:	input;
+	result[25..0]	:	output;
+) 
+VARIABLE
+	add1_result[23..0]	:	WIRE;
+	add13_result[11..0]	:	WIRE;
+	add17_result[5..0]	:	WIRE;
+	add21_result[1..0]	:	WIRE;
+	add25_result[5..0]	:	WIRE;
+	add5_result[20..0]	:	WIRE;
+	add9_result[15..0]	:	WIRE;
+	sft10a[15..0] : soft;
+	sft11a[15..0] : soft;
+	sft12a[15..0] : soft;
+	sft14a[11..0] : soft;
+	sft15a[11..0] : soft;
+	sft16a[11..0] : soft;
+	sft18a[5..0] : soft;
+	sft19a[5..0] : soft;
+	sft20a[5..0] : soft;
+	sft22a[1..0] : soft;
+	sft23a[1..0] : soft;
+	sft24a[1..0] : soft;
+	sft26a[5..0] : soft;
+	sft27a[5..0] : soft;
+	sft28a[5..0] : soft;
+	sft2a[23..0] : soft;
+	sft3a[23..0] : soft;
+	sft4a[23..0] : soft;
+	sft6a[20..0] : soft;
+	sft7a[20..0] : soft;
+	sft8a[20..0] : soft;
+	w100w[0..0]	: WIRE;
+	w104w[0..0]	: WIRE;
+	w107w[0..0]	: WIRE;
+	w112w[0..0]	: WIRE;
+	w116w[0..0]	: WIRE;
+	w11w[0..0]	: WIRE;
+	w120w[0..0]	: WIRE;
+	w124w[0..0]	: WIRE;
+	w128w[0..0]	: WIRE;
+	w132w[0..0]	: WIRE;
+	w136w[0..0]	: WIRE;
+	w139w[0..0]	: WIRE;
+	w144w[0..0]	: WIRE;
+	w148w[0..0]	: WIRE;
+	w152w[0..0]	: WIRE;
+	w156w[0..0]	: WIRE;
+	w15w[0..0]	: WIRE;
+	w160w[0..0]	: WIRE;
+	w164w[0..0]	: WIRE;
+	w168w[0..0]	: WIRE;
+	w172w[0..0]	: WIRE;
+	w175w[0..0]	: WIRE;
+	w180w[0..0]	: WIRE;
+	w184w[0..0]	: WIRE;
+	w188w[0..0]	: WIRE;
+	w192w[0..0]	: WIRE;
+	w196w[0..0]	: WIRE;
+	w19w[0..0]	: WIRE;
+	w200w[0..0]	: WIRE;
+	w204w[0..0]	: WIRE;
+	w208w[0..0]	: WIRE;
+	w212w[0..0]	: WIRE;
+	w215w[0..0]	: WIRE;
+	w220w[0..0]	: WIRE;
+	w224w[0..0]	: WIRE;
+	w228w[0..0]	: WIRE;
+	w232w[0..0]	: WIRE;
+	w236w[0..0]	: WIRE;
+	w240w[0..0]	: WIRE;
+	w244w[0..0]	: WIRE;
+	w248w[0..0]	: WIRE;
+	w24w[0..0]	: WIRE;
+	w252w[0..0]	: WIRE;
+	w256w[0..0]	: WIRE;
+	w259w[0..0]	: WIRE;
+	w264w[0..0]	: WIRE;
+	w268w[0..0]	: WIRE;
+	w272w[0..0]	: WIRE;
+	w276w[0..0]	: WIRE;
+	w280w[0..0]	: WIRE;
+	w284w[0..0]	: WIRE;
+	w288w[0..0]	: WIRE;
+	w28w[0..0]	: WIRE;
+	w292w[0..0]	: WIRE;
+	w296w[0..0]	: WIRE;
+	w300w[0..0]	: WIRE;
+	w304w[0..0]	: WIRE;
+	w307w[0..0]	: WIRE;
+	w312w[0..0]	: WIRE;
+	w316w[0..0]	: WIRE;
+	w320w[0..0]	: WIRE;
+	w325w[0..0]	: WIRE;
+	w32w[0..0]	: WIRE;
+	w330w[0..0]	: WIRE;
+	w335w[0..0]	: WIRE;
+	w340w[0..0]	: WIRE;
+	w345w[0..0]	: WIRE;
+	w350w[0..0]	: WIRE;
+	w355w[0..0]	: WIRE;
+	w35w[0..0]	: WIRE;
+	w360w[0..0]	: WIRE;
+	w365w[0..0]	: WIRE;
+	w369w[0..0]	: WIRE;
+	w375w[0..0]	: WIRE;
+	w377w	: WIRE;
+	w398w	: WIRE;
+	w40w[0..0]	: WIRE;
+	w44w[0..0]	: WIRE;
+	w48w[0..0]	: WIRE;
+	w52w[0..0]	: WIRE;
+	w55w[0..0]	: WIRE;
+	w60w[0..0]	: WIRE;
+	w647w[26..0]	: WIRE;
+	w64w[0..0]	: WIRE;
+	w68w[0..0]	: WIRE;
+	w72w[0..0]	: WIRE;
+	w76w[0..0]	: WIRE;
+	w79w[0..0]	: WIRE;
+	w84w[0..0]	: WIRE;
+	w88w[0..0]	: WIRE;
+	w92w[0..0]	: WIRE;
+	w96w[0..0]	: WIRE;
+
+BEGIN 
+	add1_result[] = sft2a[].out + sft3a[].out;
+	add13_result[] = sft14a[].out + sft15a[].out;
+	add17_result[] = sft18a[].out + sft19a[].out;
+	add21_result[] = sft22a[].out + sft23a[].out;
+	add25_result[] = sft26a[].out + sft27a[].out;
+	add5_result[] = sft6a[].out + sft7a[].out;
+	add9_result[] = sft10a[].out + sft11a[].out;
+	sft10a[].in = ( w398w, ( w268w[0..0], ( w264w[0..0], ( (! w350w[0..0]), ( (! w345w[0..0]), ( w184w[0..0], ( sft28a[3..3].out, ( sft28a[2..2].out, ( sft20a[3..3].out, ( sft24a[0..0].out, ( w196w[0..0], ( w160w[0..0], ( w156w[0..0], ( w124w[0..0], ( w120w[0..0], w92w[0..0])))))))))))))));
+	sft11a[].in = ( w398w, ( w398w, ( sft16a[11..11].out, ( w224w[0..0], ( sft28a[5..5].out, ( sft28a[4..4].out, ( sft20a[5..5].out, ( sft20a[4..4].out, ( sft24a[1..1].out, ( sft28a[0..0].out, ( sft20a[1..1].out, ( sft20a[0..0].out, ( w84w[0..0], ( w64w[0..0], ( w60w[0..0], w44w[0..0])))))))))))))));
+	sft12a[].in = add9_result[];
+	sft14a[].in = ( w398w, ( w300w[0..0], ( w296w[0..0], ( (! w340w[0..0]), ( (! w335w[0..0]), ( w284w[0..0], ( w280w[0..0], ( w236w[0..0], ( w232w[0..0], ( w192w[0..0], ( w188w[0..0], w152w[0..0])))))))))));
+	sft15a[].in = ( w398w, ( w398w, ( w256w[0..0], ( w215w[0..0], ( w212w[0..0], ( w175w[0..0], ( w172w[0..0], ( w139w[0..0], ( w136w[0..0], ( w107w[0..0], ( w104w[0..0], w79w[0..0])))))))))));
+	sft16a[].in = add13_result[];
+	sft18a[].in = ( w398w, ( w244w[0..0], ( (! w325w[0..0]), ( (! w320w[0..0]), ( w272w[0..0], w228w[0..0])))));
+	sft19a[].in = ( w398w, ( w398w, ( w144w[0..0], ( w168w[0..0], ( w112w[0..0], w88w[0..0])))));
+	sft20a[].in = add17_result[];
+	sft22a[].in = ( w398w, w276w[0..0]);
+	sft23a[].in = ( w398w, w116w[0..0]);
+	sft24a[].in = add21_result[];
+	sft26a[].in = ( w398w, ( w292w[0..0], ( w288w[0..0], ( (! w330w[0..0]), ( w204w[0..0], w377w)))));
+	sft27a[].in = ( w398w, ( w398w, ( w180w[0..0], ( w148w[0..0], ( w240w[0..0], w200w[0..0])))));
+	sft28a[].in = add25_result[];
+	sft2a[].in = ( w377w, ( w377w, ( w377w, ( (! w369w[0..0]), ( sft8a[17..17].out, ( sft8a[16..16].out, ( sft8a[15..15].out, ( sft8a[14..14].out, ( sft8a[13..13].out, ( sft8a[12..12].out, ( sft8a[11..11].out, ( sft8a[10..10].out, ( sft8a[9..9].out, ( sft8a[8..8].out, ( sft8a[7..7].out, ( sft8a[6..6].out, ( sft8a[5..5].out, ( sft8a[4..4].out, ( sft8a[3..3].out, ( sft8a[2..2].out, ( w40w[0..0], ( w28w[0..0], ( w24w[0..0], w15w[0..0])))))))))))))))))))))));
+	sft3a[].in = ( w398w, ( sft8a[20..20].out, ( sft8a[19..19].out, ( sft8a[18..18].out, ( sft12a[15..15].out, ( sft12a[14..14].out, ( sft12a[13..13].out, ( sft12a[12..12].out, ( sft12a[11..11].out, ( sft12a[10..10].out, ( sft12a[9..9].out, ( sft12a[8..8].out, ( sft12a[7..7].out, ( sft12a[6..6].out, ( sft12a[5..5].out, ( sft12a[4..4].out, ( sft12a[3..3].out, ( sft12a[2..2].out, ( sft12a[1..1].out, ( sft12a[0..0].out, ( sft8a[1..1].out, ( sft8a[0..0].out, ( w32w[0..0], w19w[0..0])))))))))))))))))))))));
+	sft4a[].in = add1_result[];
+	sft6a[].in = ( w398w, ( w375w[0..0], ( w316w[0..0], ( w312w[0..0], ( (! w360w[0..0]), ( (! w355w[0..0]), ( w259w[0..0], ( w220w[0..0], ( w252w[0..0], ( w248w[0..0], ( w208w[0..0], ( sft16a[5..5].out, ( sft16a[4..4].out, ( w164w[0..0], ( w132w[0..0], ( w128w[0..0], ( w100w[0..0], ( w96w[0..0], ( w72w[0..0], ( w68w[0..0], w48w[0..0]))))))))))))))))))));
+	sft7a[].in = ( w398w, ( w398w, ( w398w, ( (! w365w[0..0]), ( w307w[0..0], ( w304w[0..0], ( sft16a[10..10].out, ( sft16a[9..9].out, ( sft16a[8..8].out, ( sft16a[7..7].out, ( sft16a[6..6].out, ( sft28a[1..1].out, ( sft20a[2..2].out, ( sft16a[3..3].out, ( sft16a[2..2].out, ( sft16a[1..1].out, ( sft16a[0..0].out, ( w76w[0..0], ( w55w[0..0], ( w52w[0..0], w35w[0..0]))))))))))))))))))));
+	sft8a[].in = add5_result[];
+	result[] = ( w647w[25..2], B"0", data[0..0]);
+	w100w[] = (data[6..6] & data[2..2]);
+	w104w[] = (data[6..6] & data[3..3]);
+	w107w[] = (data[6..6] & data[4..4]);
+	w112w[] = (data[6..6] & (! data[5..5]));
+	w116w[] = (data[6..6] & data[5..5]);
+	w11w[] = (data[1..1] & (! data[0..0]));
+	w120w[] = (data[7..7] & data[0..0]);
+	w124w[] = (data[7..7] & data[1..1]);
+	w128w[] = (data[7..7] & data[2..2]);
+	w132w[] = (data[7..7] & data[3..3]);
+	w136w[] = (data[7..7] & data[4..4]);
+	w139w[] = (data[7..7] & data[5..5]);
+	w144w[] = (data[7..7] & (! data[6..6]));
+	w148w[] = (data[7..7] & data[6..6]);
+	w152w[] = (data[8..8] & data[0..0]);
+	w156w[] = (data[8..8] & data[1..1]);
+	w15w[] = (data[1..1] & data[0..0]);
+	w160w[] = (data[8..8] & data[2..2]);
+	w164w[] = (data[8..8] & data[3..3]);
+	w168w[] = (data[8..8] & data[4..4]);
+	w172w[] = (data[8..8] & data[5..5]);
+	w175w[] = (data[8..8] & data[6..6]);
+	w180w[] = (data[8..8] & (! data[7..7]));
+	w184w[] = (data[8..8] & data[7..7]);
+	w188w[] = (data[9..9] & data[0..0]);
+	w192w[] = (data[9..9] & data[1..1]);
+	w196w[] = (data[9..9] & data[2..2]);
+	w19w[] = (data[2..2] & data[0..0]);
+	w200w[] = (data[9..9] & data[3..3]);
+	w204w[] = (data[9..9] & data[4..4]);
+	w208w[] = (data[9..9] & data[5..5]);
+	w212w[] = (data[9..9] & data[6..6]);
+	w215w[] = (data[9..9] & data[7..7]);
+	w220w[] = (data[9..9] & (! data[8..8]));
+	w224w[] = (data[9..9] & data[8..8]);
+	w228w[] = (data[10..10] & data[0..0]);
+	w232w[] = (data[10..10] & data[1..1]);
+	w236w[] = (data[10..10] & data[2..2]);
+	w240w[] = (data[10..10] & data[3..3]);
+	w244w[] = (data[10..10] & data[4..4]);
+	w248w[] = (data[10..10] & data[5..5]);
+	w24w[] = (data[2..2] & (! data[1..1]));
+	w252w[] = (data[10..10] & data[6..6]);
+	w256w[] = (data[10..10] & data[7..7]);
+	w259w[] = (data[10..10] & data[8..8]);
+	w264w[] = (data[10..10] & (! data[9..9]));
+	w268w[] = (data[10..10] & data[9..9]);
+	w272w[] = (data[11..11] & data[0..0]);
+	w276w[] = (data[11..11] & data[1..1]);
+	w280w[] = (data[11..11] & data[2..2]);
+	w284w[] = (data[11..11] & data[3..3]);
+	w288w[] = (data[11..11] & data[4..4]);
+	w28w[] = (data[2..2] & data[1..1]);
+	w292w[] = (data[11..11] & data[5..5]);
+	w296w[] = (data[11..11] & data[6..6]);
+	w300w[] = (data[11..11] & data[7..7]);
+	w304w[] = (data[11..11] & data[8..8]);
+	w307w[] = (data[11..11] & data[9..9]);
+	w312w[] = (data[11..11] & (! data[10..10]));
+	w316w[] = (data[11..11] & data[10..10]);
+	w320w[] = (data[12..12] & data[0..0]);
+	w325w[] = (data[12..12] & data[1..1]);
+	w32w[] = (data[3..3] & data[0..0]);
+	w330w[] = (data[12..12] & data[2..2]);
+	w335w[] = (data[12..12] & data[3..3]);
+	w340w[] = (data[12..12] & data[4..4]);
+	w345w[] = (data[12..12] & data[5..5]);
+	w350w[] = (data[12..12] & data[6..6]);
+	w355w[] = (data[12..12] & data[7..7]);
+	w35w[] = (data[3..3] & data[1..1]);
+	w360w[] = (data[12..12] & data[8..8]);
+	w365w[] = (data[12..12] & data[9..9]);
+	w369w[] = (data[12..12] & data[10..10]);
+	w375w[] = (data[12..12] & (! data[11..11]));
+	w377w = B"1";
+	w398w = B"0";
+	w40w[] = (data[3..3] & (! data[2..2]));
+	w44w[] = (data[3..3] & data[2..2]);
+	w48w[] = (data[4..4] & data[0..0]);
+	w52w[] = (data[4..4] & data[1..1]);
+	w55w[] = (data[4..4] & data[2..2]);
+	w60w[] = (data[4..4] & (! data[3..3]));
+	w647w[] = ( sft4a[23..22].out, sft4a[21..20].out, sft4a[19..18].out, sft4a[17..16].out, sft4a[15..14].out, sft4a[13..12].out, sft4a[11..10].out, sft4a[9..8].out, sft4a[7..6].out, sft4a[5..4].out, sft4a[3..2].out, sft4a[1..0].out, w11w[0..0], w398w, w398w);
+	w64w[] = (data[4..4] & data[3..3]);
+	w68w[] = (data[5..5] & data[0..0]);
+	w72w[] = (data[5..5] & data[1..1]);
+	w76w[] = (data[5..5] & data[2..2]);
+	w79w[] = (data[5..5] & data[3..3]);
+	w84w[] = (data[5..5] & (! data[4..4]));
+	w88w[] = (data[5..5] & data[4..4]);
+	w92w[] = (data[6..6] & data[0..0]);
+	w96w[] = (data[6..6] & data[1..1]);
+END;
+--VALID FILE
